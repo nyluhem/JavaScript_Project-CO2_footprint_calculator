@@ -1,20 +1,26 @@
 const PubSub = require('../helpers/pub_sub.js');
 
-const LifestyleView = function(form) {
-  this.form = form;
+const LifestyleView = function(container) {
+  this.form = container;
 }
 
 LifestyleView.prototype.bindEvents = function () {
+  const menuItem = document.querySelector('#lifestyle-menu-item')
+  menuItem.addEventListener('click', (event) => {
+    console.log('menu item clicked');
+    // renderForm
+  });
 
-  // event listener 1
-  // user clicks Lifestyle tab in submenu
-  // on click, dinamically create a form
-  // create multiple checkboxes for lifestyle category
-  // create submit button
-  // render form
+  /////// Second event listener ///////
+  // after selecting checkboxes, user clicks submit
 
-  // event listener 2
-  // on submit, recalculate total points based on answers
-  // publish result to new channel
+  // add event listener to submit ID
+  // publish answers to 'LifestyleView:Answers-submitted' channel
 
 };
+
+/////// renderForm function ///////
+// populate with checkboxes
+// create submit button
+
+module.exports = LifestyleView;
