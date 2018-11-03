@@ -11,7 +11,7 @@ LifestyleView.prototype.bindEvents = function () {
   // on click, dinamically create a form
   // create multiple checkboxes for lifestyle category
   // create submit button
-  //render form
+  // render form
 
   // event listener 2
   // on submit, recalculate total points based on answers
