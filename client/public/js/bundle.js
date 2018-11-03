@@ -93,6 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 eval("const PubSub = __webpack_require__(/*! ./helpers/pub_sub.js */ \"./client/src/helpers/pub_sub.js\");\n\n\n//# sourceURL=webpack:///./client/src/app.js?");
 
 /***/ }),
@@ -105,6 +106,9 @@ eval("const PubSub = __webpack_require__(/*! ./helpers/pub_sub.js */ \"./client/
 /***/ (function(module, exports) {
 
 eval("const PubSub = {\n  publish: function (channel, payload) {\n    const event = new CustomEvent(channel, {\n      detail: payload\n    });\n    document.dispatchEvent(event);\n  },\n\n  subscribe: function (channel, callback) {\n    document.addEventListener(channel, callback);\n  }\n};\n\nmodule.exports = PubSub;\n\n\n//# sourceURL=webpack:///./client/src/helpers/pub_sub.js?");
+=======
+eval("const PubSub = __webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module '../helpers/pub_sub.js'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));\n\n\n//# sourceURL=webpack:///./client/src/app.js?");
+>>>>>>> 6277e03590eb7b02eaf720266f2211d8fddfaadb
 
 /***/ })
 
