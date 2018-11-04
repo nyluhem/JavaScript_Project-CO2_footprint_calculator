@@ -5,6 +5,7 @@ const createRouter = function (collection) {
 
   const router = express.Router();
 
+  // SHOW
   router.get('/', (req, res) => {
     collection
       .find()
@@ -17,6 +18,7 @@ const createRouter = function (collection) {
       });
   });
 
+  // FIND BY ID
   router.get('/:id', (req, res) => {
     const id = req.params.id;
     collection
@@ -29,6 +31,7 @@ const createRouter = function (collection) {
       });
   });
 
+  // DELETE ONE
   router.delete('/:id', (req, res) => {
     const id = req.params.id;
     collection
@@ -42,6 +45,7 @@ const createRouter = function (collection) {
       });
   });
 
+  // UPDATE
   router.post('/', (req, res) => {
     const newData = req.body;
     collection
