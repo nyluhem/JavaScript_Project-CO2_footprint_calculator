@@ -126,7 +126,7 @@ eval("const PubSub = __webpack_require__(/*! ../../../helpers/pub_sub.js */ \"./
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const PubSub = __webpack_require__(/*! ../../../helpers/pub_sub.js */ \"./client/src/helpers/pub_sub.js\");\nconst CreateForm = __webpack_require__(/*! ./create_form.js */ \"./client/src/views/form_views/travel/create_form.js\")\n\nconst TravelFormView = function (formElement) {\n  this.element = formElement\n};\n\n\n\n\nmodule.exports = TravelFormView\n\n\n//# sourceURL=webpack:///./client/src/views/form_views/travel/travel_form_view.js?");
+eval("const PubSub = __webpack_require__(/*! ../../../helpers/pub_sub.js */ \"./client/src/helpers/pub_sub.js\");\nconst CreateForm = __webpack_require__(/*! ./create_form.js */ \"./client/src/views/form_views/travel/create_form.js\")\n\nconst TravelFormView = function (formElement) {\n  this.element = formElement\n};\n\nTravelFormView.prototype.setupEventListeners = function() {\n  this.element.addEventListener('submit', function(evt) {\n    evt.preventDefault();\n    const form = evt.target;\n\n    //RUN CALCULATIONS BASED ON INPUTS\n\n\n    form.reset();\n  });\n};\n\n\n\n\n\n\nmodule.exports = TravelFormView\n\n\n//# sourceURL=webpack:///./client/src/views/form_views/travel/travel_form_view.js?");
 
 /***/ })
 
