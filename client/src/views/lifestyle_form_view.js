@@ -2,30 +2,23 @@ const PubSub = require('../helpers/pub_sub.js');
 
 const LifestyleView = function(container) {
   // the container is the tabbed menu and needs to be defined first
-  this.container = document.querySelector('div');
-}
+  this.container = document.querySelector('#forms-window');
+};
 
 LifestyleView.prototype.bindEvents = function () {
   const menuItem = document.querySelector('#lifestyle-menu-item');
   menuItem.addEventListener('click', (event) => {
-    console.log('Menu item clicked');
+    console.log('Lifestyle tab clicked');
     this.createForm();
   });
 
-  // add event listener to submit ID
-  // publish answers to 'LifestyleView:Answers-submitted' channel
-
 };
 
-LifestyleView.prototype.createForm = function (mainForm) {
 
-  // const formContainer = document.createElement('div');
-  // formContainer.id = 'lifestyle-container';
-  // this.container.appendChild(formContainer);
+LifestyleView.prototype.createForm = function () {
 
   const lifestyleForm = document.createElement('form');
   lifestyleForm.id = 'lifestyle-form';
-  // formContainer.appendChild(lifestyleForm);
 
   const clothes = this.createInput('checkbox', 'Clothes');
   lifestyleForm.appendChild(clothes);
@@ -36,13 +29,18 @@ LifestyleView.prototype.createForm = function (mainForm) {
   const electronics = this.createInput('checkbox', 'Electronics');
   lifestyleForm.appendChild(electronics);
 
-  this.container.appendChild(lifestyleForm);
+  const button = document.createElement('input');
+  button.type = 'submit';
+  lifestyleForm.appendChild(button);
+  // button.addEventListener('submit', (event) => {
+  //   console.log('Clicked');
+  // });
 
-  // add the submit button
-  // attach an ID to it
+  this.container.appendChild(lifestyleForm);
 };
 
 LifestyleView.prototype.createInput = function (type, text) {
+  this.container.innerHTML = '';
   const paragraph = document.createElement('p');
   const inputElement = document.createElement('input');
   inputElement.type = type;
