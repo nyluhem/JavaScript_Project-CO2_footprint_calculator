@@ -169,6 +169,19 @@ CreateTravelForm.prototype.createNonFootprintQuestion = function () {
 
 };
 
+
+// function createRadialButton (name, value, id, checked = false) {
+//   const button = document.createElement("input");
+//   button.type = "radio"
+//   button.name = name
+//   button.value = value
+//   button.checked = checked
+// }
+
+//ADD EVENT LISTENER FOR SUBMIT
+
+
+
 CreateTravelForm.prototype.createSubmitButton = function () {
   const submitButton = document.createElement("input");
   submitButton.classList.add("submit");
