@@ -1,12 +1,12 @@
 const PubSub = require('../../../helpers/pub_sub.js');
 
-const CreateTravelForm = function (formElement) {
+const CreateTravelForm = function(formElement) {
   this.element = formElement
 };
 
-CreateTravelForm.prototype.bindEvents = function () {
-  
-};
+// CreateTravelForm.prototype.bindEvents = function () {
+//
+// };
 
 
 CreateTravelForm.prototype.createForm = function () {
@@ -99,6 +99,7 @@ CreateTravelForm.prototype.createCarQuestion = function () {
   carDiv.appendChild(labelCarOptionFour)
 
   return carDiv
+  console.log(carDiv)
 };
 
 CreateTravelForm.prototype.createPublicTransportQuestion = function () {
