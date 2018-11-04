@@ -20,31 +20,47 @@
         <h2>Please enter travel details:</h2>
           <form id=travel-form-view>
              <fieldset>
-              <legend>Car</legend>
-              <label for="cost">How many miles a week do you drive:</label></br>
-    <div class="radio">
-      <input type="radio" name="miles-per-week" value="0" id="does-not-drive" checked/>
-      <label for="does-not-drive">I don't drive</label>
+              <legend>Car/Motorbike</legend>
+              <p>How many miles a week do you drive:</p></br>
+              <div class="radio">
+                <input type="radio" name="car-miles-per-week" value="0" id="0" checked/>
+                <label for="0">0</label>
 
-      <input type="radio" name="miles-per-week" value="1-5" id="second-option"/>
-      <label for="second-option">1-5</label>
+                <input type="radio" name="car-miles-per-week" value="1-10" id="second-option"/>
+                <label for="second-option">1-10</label>
 
-      <input type="radio" name="miles-per-week" value="6-10" id="third-option"/>
-      <label for="third-option">6-10</label>
+                <input type="radio" name="car-miles-per-week" value="11-20" id="third-option"/>
+                <label for="third-option">11-20</label>
 
-      <input type="radio" name="miles-per-week" value="11-15" id="fourth-option"/>
-      <label for="fourth-option">11-15</label>
-
-      <input type="radio" name="miles-per-week" value="15+" id="fifth-option"/>
-      <label for="fifth-option">15+</label>
+                <input type="radio" name="car-miles-per-week" value="20+" id="fourth-option"/>
+                <label for="fourth-option">20+</label>
              </fieldset>
 
              <fieldset>
+               <legend>Bus/Rail/Coach</legend>
+               <p>How many miles a week do you use public transport</p></br>
+               <div class="radio">
+                 <input type="radio" name="bus-miles-per-week" value="0" id="0" checked/>
+                 <label for="0">0</label>
 
+                 <input type="radio" name="bus-miles-per-week" value="1-10" id="second-option"/>
+                 <label for="second-option">1-10</label>
 
+                 <input type="radio" name="bus-miles-per-week" value="11-20" id="third-option"/>
+                 <label for="third-option">11-20</label>
+
+                 <input type="radio" name="bus-miles-per-week" value="20+" id="fourth-option"/>
+                 <label for="fourth-option">20+</label>
              </fieldset>
              <fieldset>
+               <legend>Cycling/Walking</legend>
+               <p>Do you cycle or walk to work (if you cycle/walk some of the way as part of your journey then please also calculate mileage of public/private transport):</p></br>
+               <div class="radio">
+                 <input type="radio" name="bike-walk" value="yes" id="yes"/>
+                 <label for="yes">Yes</label>
 
+                 <input type="radio" name="bike-walk" value="no" id="no" checked/>
+                 <label for="no">No</label>
              </fieldset>
           </form>
       </div>
