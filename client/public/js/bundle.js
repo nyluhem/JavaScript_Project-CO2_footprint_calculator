@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("const TravelFormView = (\"./form_views/travel_form_view.js\");\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  console.log(\"JavaScript Loaded\")\n})\n\n\n//# sourceURL=webpack:///./client/src/app.js?");
+eval("const TravelFormView = (\"./form_views/travel/travel_form_view.js\");\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  console.log(\"JavaScript Loaded\")\n})\n\n\n//# sourceURL=webpack:///./client/src/app.js?");
 
 /***/ })
 
