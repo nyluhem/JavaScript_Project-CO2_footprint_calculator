@@ -1,15 +1,22 @@
 const PubSub = require('../../../helpers/pub_sub.js');
 
-const CreateTravelForm = function(formElement) {
-  this.element = formElement
+const CreateTravelForm = function(container) {
+  this.container = container
 };
 
 // CreateTravelForm.prototype.bindEvents = function () {
+//   this.container.innerHTML = ""
+//   const form =
+// };
 //
+// SightingsGridView.prototype.bindEvents = function () {
+//   PubSub.subscribe('Sightings:data-loaded', (evt) => {
+//     this.render(evt.detail);
+//   });
 // };
 
-
-CreateTravelForm.prototype.createForm = function () {
+CreateTravelForm.prototype.createForm = function (element) {
+  this.element = element
   const form = document.createElement("form");
   form.classList.add('travel-form');
 
@@ -29,8 +36,9 @@ CreateTravelForm.prototype.createForm = function () {
   const submitButton = this.createSubmitButton();
   form.appendChild(submitButton);
 
-  this.element = form;
+  // this.element = form;
   return form;
+  this.element.appendChild(form)
 };
 
 CreateTravelForm.prototype.createCarQuestion = function () {
@@ -213,6 +221,14 @@ bikeDiv.appendChild(labelBikeOptionTwo)
 
 };
 
+CreateTravelForm.prototype.createSubmitButton = function () {
+  const submitButton = document.createElement("input");
+  submitButton.classList.add("submit");
+  submitButton.type = "submit"
+  submitButton.value = "Submit Travel Details"
+
+  return submitButton;
+};
 
 
 
@@ -229,13 +245,5 @@ bikeDiv.appendChild(labelBikeOptionTwo)
 
 
 
-CreateTravelForm.prototype.createSubmitButton = function () {
-  const submitButton = document.createElement("input");
-  submitButton.classList.add("submit");
-  submitButton.type = "submit"
-  submitButton.value = "Submit Travel Details"
-
-  return submitButton;
-};
 
 module.exports = CreateTravelForm;

@@ -18,8 +18,4 @@ TravelFormView.prototype.setupEventListeners = function() {
 };
 
 
-
-
-
-
 module.exports = TravelFormView
