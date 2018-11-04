@@ -5,10 +5,4 @@ const TravelFormView = function (formElement) {
 };
 
 
-TravelFormView.prototype.createForm = function () {
-
-};
-
-
-
 module.exports = TravelFormView
