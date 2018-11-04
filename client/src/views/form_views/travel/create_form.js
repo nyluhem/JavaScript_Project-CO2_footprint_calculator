@@ -4,6 +4,10 @@ const CreateTravelForm = function (formElement) {
   this.element = formElement
 };
 
+CreateTravelForm.prototype.bindEvents = function () {
+  
+};
+
 
 CreateTravelForm.prototype.createForm = function () {
   const form = document.createElement("form");
@@ -166,8 +170,50 @@ CreateTravelForm.prototype.createPublicTransportQuestion = function () {
 };
 
 CreateTravelForm.prototype.createNonFootprintQuestion = function () {
+  const bikeDiv = document.createElement("div");
+  bikeDiv.classList.add("bike-section");
+
+  const bikeHeader = document.createElement("legend");
+  bikeHeader.textContent = "Cycling/Walking";
+  bikeDiv.appendChild(bikeHeader)
+
+  const bikeQuestion = document.createElement("p");
+  bikeQuestion.textContent = "Do you cycle or walk to work (if you cycle/walk some of the way as part of your journey then please also calculate mileage of public/private transport):"
+  bikeDiv.appendChild(bikeQuestion)
+
+  const bikeOptionOne = document.createElement("input");
+  bikeOptionOne.type = "radio"
+  bikeOptionOne.name = "bike-miles"
+  bikeOptionOne.value = "yes"
+  bikeOptionOne.id = "option-one"
+  bikeOptionOne.checked = false;
+
+  const labelBikeOptionOne = document.createElement("label");
+  labelBusOptionOne.textContent = "Yes"
+  labelBusOptionOne.id = "option-one"
+
+  bikeDiv.appendChild(bikeOptionOne)
+  bikeDiv.appendChild(labelBikeOptionOne)
+
+  const bikeOptionTwo = document.createElement("input");
+  bikeOptionTwo.type = "radio";
+  bikeOptionTwo.name = "bike-miles";
+  bikeOptionTwo.value = "No";
+  bikeOptionTwo.id = "option-two"
+  bikeOptionTwo.checked = true
+
+
+const labelBikeOptionTwo = document.createElement("label");
+labelBikeOptionTwo.textContent = "No"
+labelBikeOptionTwos.id = "option-two"
+
+bikeDiv.appendChild(bikeOptionTwo)
+bikeDiv.appendChild(labelBikeOptionTwo)
 
 };
+
+
+
 
 
 // function createRadialButton (name, value, id, checked = false) {
