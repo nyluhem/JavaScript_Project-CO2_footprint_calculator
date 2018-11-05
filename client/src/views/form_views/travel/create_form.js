@@ -5,7 +5,10 @@ const CreateTravelForm = function(container) {
 };
 
 CreateTravelForm.prototype.createForm = function () {
+  this.container.innerHTML = ""
+
   const form = document.createElement("form");
+
   form.classList.add('travel-form');
   form.id = ("travel-form");
 
@@ -42,7 +45,7 @@ CreateTravelForm.prototype.createCarQuestion = function () {
   carQuestion.textContent = "How many miles a week do you drive:"
   carDiv.appendChild(carQuestion)
 
-  const carOptionOne = this.createRadioButton("car-miles", "0", "car-option-one", true);
+  const carOptionOne = this.createRadioButton("car-miles", "0", "car-option-one");
   const labelCarOptionOne = this.createLabel("0", "car-option-one");
 
   carDiv.appendChild(carOptionOne)
@@ -82,7 +85,7 @@ CreateTravelForm.prototype.createPublicTransportQuestion = function () {
   busQuestion.textContent = "How many miles a week do you travel on Public Transport:"
   busDiv.appendChild(busQuestion)
 
-  const busOptionOne = this.createRadioButton("bus-miles", "0", "bus-option-one", true);
+  const busOptionOne = this.createRadioButton("bus-miles", "0", "bus-option-one");
   const labelBusOptionOne = this.createLabel("0", "bus-option-one");
 
   busDiv.appendChild(busOptionOne)
@@ -127,7 +130,7 @@ CreateTravelForm.prototype.createNonFootprintQuestion = function () {
   bikeDiv.appendChild(bikeOptionOne)
   bikeDiv.appendChild(labelBikeOptionOne)
 
-  const bikeOptionTwo = this.createRadioButton("bike-miles", "0", "bike-option-two", true);
+  const bikeOptionTwo = this.createRadioButton("bike-miles", "0", "bike-option-two");
   const labelBikeOptionTwo = this.createLabel("No", "bike-option-two");
 
   bikeDiv.appendChild(bikeOptionTwo)
@@ -146,13 +149,12 @@ CreateTravelForm.prototype.createSubmitButton = function () {
   return submitButton;
 };
 
-  CreateTravelForm.prototype.createRadioButton = function (name, value, id, checked = false) {
+  CreateTravelForm.prototype.createRadioButton = function (name, value, id) {
     const detail = document.createElement("input");
     detail.type = "radio"
     detail.name = `${name}`
     detail.value = `${value}`
     detail.id = `${id}`
-    detail.checked = checked
 
     return detail
   }
