@@ -5,32 +5,24 @@ const TravelCalculator = function (){
 
 };
 
-  
+  TravelCalculator.prototype.bindEvents = function () {
+    PubSub.subscribe('TravelModel:send-values-array', (evt) => {
+      const array = evt.detail
+      const travelPoints = this.calculateTotal(array)
+      PubSub.publish("TravelForm:display-results", travelPoints);
+    });
+  };
 
+  TravelCalculator.prototype.calculateTotal = function (array) {
+    const mappedArray = this.mapArray(array);
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    const sumOfArray = mappedArray.reduce(reducer);
+    return sumOfArray
+  };
 
-    PubSub.publish('TravelModel:send-values-array', answerArray)
-
-
-
-  //assign points to each option and then have it increase/decrease where appropriate.
-  //i.e. 20+ miles by car = 10 points(??). Using Bike/Walking is equal to 0.
-  //calculation should basically take the value from response:
-
-  //If option-3 selected then + 10points
-  //if option-2 selected than + 5 points
-  //if yes selected then - 10 points(?)
-  //then add the first option, to the second option, to the third option.
-
-  //Will also need to be able to post this submitted information, and edit it.
-
-  // const carAnswer = document.querySelector('input[name="car-miles"]:checked').value;
-  // const busAnswer = document.querySelector('input[name="bus-miles"]:checked').value;
-  // const bikeAnswer = document.querySelector('input[name="bike-miles"]:checked').value;
-  // const answerArray = [carAnswer, busAnswer, bikeAnswer];
-  // const mappedArray = answerArray.map(x => parseInt(x))
-  // const reducer = (accumulator, currentValue) => accumulator + currentValue
-  // const sum = mappedArray.reduce(reducer)
-  // console.log(sum)
-
+  TravelCalculator.prototype.mapArray = function (array) {
+    const mappedArray = array.map(x => parseInt(x))
+    return mappedArray
+  };
 
 module.exports = TravelCalculator

@@ -4,6 +4,22 @@ const CreateTravelForm = function(container) {
   this.container = container
 };
 
+CreateTravelForm.prototype.getResults = function () {
+  PubSub.subscribe("TravelForm:display-results", (evt) => {
+    const totalPoints = evt.detail
+    const results = this.displayResults(totalPoints)
+    this.container.appendChild(results)
+});
+};
+
+  CreateTravelForm.prototype.displayResults = function (value) {
+    const points = document.createElement("h1");
+    points.textContent = `${value}`
+    return points
+  };
+
+
+
 CreateTravelForm.prototype.createForm = function () {
   this.container.innerHTML = ""
 
@@ -157,7 +173,7 @@ CreateTravelForm.prototype.createSubmitButton = function () {
     detail.id = `${id}`
 
     return detail
-  }
+  };
 
   CreateTravelForm.prototype.createLabel = function (textContent, id) {
     const detail = document.createElement("label");
@@ -165,6 +181,6 @@ CreateTravelForm.prototype.createSubmitButton = function () {
     detail.id = `${id}`
 
     return detail
-  }
+  };
 
 module.exports = CreateTravelForm;
