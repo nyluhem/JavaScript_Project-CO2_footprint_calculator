@@ -12,7 +12,6 @@ TravelFormView.prototype.setupEventListeners = function() {
 
     //RUN CALCULATIONS BASED ON INPUTS
 
-
     form.reset();
   });
 };

@@ -80,28 +80,14 @@ CreateTravelForm.prototype.createCarQuestion = function () {
   carDiv.appendChild(carOptionTwo)
   carDiv.appendChild(labelCarOptionTwo)
 
-  const carOptionThree = document.createElement("input");
-  carOptionThree.type = "radio";
-  carOptionThree.name = "car-miles";
-  carOptionThree.value = "11-20";
-  carOptionThree.id = "option-three"
-
-  const labelCarOptionThree = document.createElement("label");
-  labelCarOptionThree.textContent = "11-20"
-  labelCarOptionThree.for = "option-three"
+  const carOptionThree = this.createRadioButton("car-miles", "11-20", "car-option-three");
+  const labelCarOptionThree = this.createLabel("11-20", "car-option-three");
 
   carDiv.appendChild(carOptionThree)
   carDiv.appendChild(labelCarOptionThree)
 
-  const carOptionFour = document.createElement("input");
-  carOptionFour.type = "radio";
-  carOptionFour.name = "car-miles";
-  carOptionFour.value = "20+";
-  carOptionFour.id = "option-four"
-
-  const labelCarOptionFour = document.createElement("label");
-  labelCarOptionFour.textContent = "20+"
-  labelCarOptionFour.for = "option-four"
+  const carOptionFour = this.createRadioButton("car-miles", "20+", "car-option-four");
+  const labelCarOptionFour = this.createLabel("20+", "car-option-four");
 
   carDiv.appendChild(carOptionFour)
   carDiv.appendChild(labelCarOptionFour)
@@ -122,55 +108,26 @@ CreateTravelForm.prototype.createPublicTransportQuestion = function () {
   busQuestion.textContent = "How many miles a week do you travel on Public Transport:"
   busDiv.appendChild(busQuestion)
 
-  const busOptionOne = document.createElement("input");
-  busOptionOne.type = "radio"
-  busOptionOne.name = "bus-miles"
-  busOptionOne.value = "0"
-  busOptionOne.id = "option-one"
-  busOptionOne.checked = true;
-
-  const labelBusOptionOne = document.createElement("label");
-  labelBusOptionOne.textContent = "0"
-  labelBusOptionOne.id = "option-one"
+  const busOptionOne = this.createRadioButton("bus-miles", "0", "bus-option-one", true);
+  const labelBusOptionOne = this.createLabel("0", "bus-option-one");
 
   busDiv.appendChild(busOptionOne)
   busDiv.appendChild(labelBusOptionOne)
 
-  const busOptionTwo = document.createElement("input");
-  busOptionTwo.type = "radio";
-  busOptionTwo.name = "bus-miles";
-  busOptionTwo.value = "1-10";
-  busOptionTwo.id = "option-two"
-
-  const labelBusOptionTwo = document.createElement("label");
-  labelBusOptionTwo.textContent = "1-10"
-  labelBusOptionTwo.for = "option-two"
+  const busOptionTwo = this.createRadioButton("bus-miles", "1-10", "bus-option-two");
+  const labelBusOptionTwo = this.createLabel("1-10", "bus-option-two");
 
   busDiv.appendChild(busOptionTwo)
   busDiv.appendChild(labelBusOptionTwo)
 
-  const busOptionThree = document.createElement("input");
-  busOptionThree.type = "radio";
-  busOptionThree.name = "bus-miles";
-  busOptionThree.value = "11-20";
-  busOptionThree.id = "option-three"
-
-  const labelBusOptionThree = document.createElement("label");
-  labelBusOptionThree.textContent = "11-20"
-  labelBusOptionThree.for = "option-three"
+  const busOptionThree = this.createRadioButton("bus-miles", "11-20", "bus-option-three");
+  const labelBusOptionThree = this.createLabel("11-20", "bus-option-three");
 
   busDiv.appendChild(busOptionThree)
   busDiv.appendChild(labelBusOptionThree)
 
-  const busOptionFour = document.createElement("input");
-  busOptionFour.type = "radio";
-  busOptionFour.name = "bus-miles";
-  busOptionFour.value = "20+";
-  busOptionFour.id = "option-four"
-
-  const labelBusOptionFour = document.createElement("label");
-  labelBusOptionFour.textContent = "20+"
-  labelBusOptionFour.for = "option-four"
+  const busOptionFour = this.createRadioButton("bus-miles", "20+", "bus-option-four");
+  const labelBusOptionFour = this.createLabel("20+", "bus-option-four");
 
   busDiv.appendChild(busOptionFour)
   busDiv.appendChild(labelBusOptionFour)
@@ -190,34 +147,17 @@ CreateTravelForm.prototype.createNonFootprintQuestion = function () {
   bikeQuestion.textContent = "Do you cycle or walk to work (if you cycle/walk some of the way as part of your journey then please also calculate mileage of public/private transport):"
   bikeDiv.appendChild(bikeQuestion)
 
-  const bikeOptionOne = document.createElement("input");
-  bikeOptionOne.type = "radio"
-  bikeOptionOne.name = "bike-miles"
-  bikeOptionOne.value = "yes"
-  bikeOptionOne.id = "option-one"
-  bikeOptionOne.checked = false;
-
-  const labelBikeOptionOne = document.createElement("label");
-  labelBikeOptionOne.textContent = "Yes"
-  labelBikeOptionOne.id = "option-one"
+  const bikeOptionOne = this.createRadioButton("bike-miles", "yes", "bike-option-one");
+  const labelBikeOptionOne = this.createLabel("Yes", "bike-option-one");
 
   bikeDiv.appendChild(bikeOptionOne)
   bikeDiv.appendChild(labelBikeOptionOne)
 
-  const bikeOptionTwo = document.createElement("input");
-  bikeOptionTwo.type = "radio";
-  bikeOptionTwo.name = "bike-miles";
-  bikeOptionTwo.value = "No";
-  bikeOptionTwo.id = "option-two"
-  bikeOptionTwo.checked = true
+  const bikeOptionTwo = this.createRadioButton("bike-miles", "no", "bike-option-two", true);
+  const labelBikeOptionTwo = this.createLabel("No", "bike-option-two");
 
-
-const labelBikeOptionTwo = document.createElement("label");
-labelBikeOptionTwo.textContent = "No"
-labelBikeOptionTwo.id = "option-two"
-
-bikeDiv.appendChild(bikeOptionTwo)
-bikeDiv.appendChild(labelBikeOptionTwo)
+  bikeDiv.appendChild(bikeOptionTwo)
+  bikeDiv.appendChild(labelBikeOptionTwo)
 
   return bikeDiv
 
@@ -232,20 +172,23 @@ CreateTravelForm.prototype.createSubmitButton = function () {
   return submitButton;
 };
 
+  CreateTravelForm.prototype.createRadioButton = function (name, value, id, checked = false) {
+    const detail = document.createElement("input");
+    detail.type = "radio"
+    detail.name = `${name}`
+    detail.value = `${value}`
+    detail.id = `${id}`
+    detail.checked = checked
 
+    return detail
+  }
 
+  CreateTravelForm.prototype.createLabel = function (textContent, id) {
+    const detail = document.createElement("label");
+    detail.textContent = `${textContent}`
+    detail.id = `${id}`
 
-// function createRadialButton (name, value, id, checked = false) {
-//   const button = document.createElement("input");
-//   button.type = "radio"
-//   button.name = name
-//   button.value = value
-//   button.checked = checked
-// }
-
-//ADD EVENT LISTENER FOR SUBMIT
-
-
-
+    return detail
+  }
 
 module.exports = CreateTravelForm;
