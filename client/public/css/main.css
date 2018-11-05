@@ -1,0 +1,24 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Neucha', cursive;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0
+}
+
+li {
+  display: inline;
+  padding: 10px;
+  color: White;
+  background: Green;
+}
+
+li:hover {
+  color: LightBlue;
+}
