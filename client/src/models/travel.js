@@ -5,6 +5,13 @@ const TravelCalculator = function (){
 
 };
 
+  
+
+
+    PubSub.publish('TravelModel:send-values-array', answerArray)
+
+
+
   //assign points to each option and then have it increase/decrease where appropriate.
   //i.e. 20+ miles by car = 10 points(??). Using Bike/Walking is equal to 0.
   //calculation should basically take the value from response:

@@ -10,6 +10,7 @@ TravelFormView.prototype.setupEventListeners = function() {
     const form = evt.target;
     const answerArray = this.getValues();
     console.log(answerArray)
+    PubSub.publish('TravelModel:send-values-array', answerArray);
     // const carAnswer = document.querySelector('input[name="car-miles"]:checked').value;
     // const busAnswer = document.querySelector('input[name="bus-miles"]:checked').value;
     // const bikeAnswer = document.querySelector('input[name="bike-miles"]:checked').value;
