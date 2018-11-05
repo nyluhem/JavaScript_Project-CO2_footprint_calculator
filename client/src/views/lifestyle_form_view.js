@@ -7,20 +7,8 @@ const LifestyleView = function(container) {
 LifestyleView.prototype.bindEvents = function () {
   const menuItem = document.querySelector('#lifestyle-menu-item');
   menuItem.addEventListener('click', (event) => {
-    console.log('Lifestyle tab clicked');
     this.createForm();
   });
-
-  // event listener not working
-  // button is null
-  // const button = document.querySelector('#submit-button');
-  // button.addEventListener('submit', (event) => {
-  //   console.log('Button clicked');
-    // get value of all inputs and send it to the model
-    //PubSub.publish('LifestyleFormView:answers-submitted', (event) => {
-  //   console.log('published on lifestyle channel');
-  // });
-
 };
 
 
@@ -33,18 +21,25 @@ LifestyleView.prototype.createForm = function () {
 
   const clothesLabel = this.createLabel('Clothes');
   const clothes = this.createInput('checkbox', '1');
-  lifestyleForm.appendChild(clothesLabel).appendChild(clothes);
+  lifestyleForm.appendChild(clothes);
+  lifestyleForm.appendChild(clothesLabel);
 
   const cosmeticsLabel = this.createLabel('Cosmetics');
   const cosmetics = this.createInput('checkbox', '2');
-  lifestyleForm.appendChild(cosmeticsLabel).appendChild(cosmetics);
+  lifestyleForm.appendChild(cosmetics);
+  lifestyleForm.appendChild(cosmeticsLabel);
 
   const electronicsLabel = this.createLabel('Electronics');
   const electronics = this.createInput('checkbox', '3');
-  lifestyleForm.appendChild(electronicsLabel).appendChild(electronics);
+  lifestyleForm.appendChild(electronics);
+  lifestyleForm.appendChild(electronicsLabel);
 
-  const button = this.createInput('submit', 'Calculate');
-  button.id = 'submit-button';
+  const button = this.createButton();
+  button.addEventListener('click', (event) => {
+    // event.preventDefault();
+    this.handleSubmit(event);
+    console.log('Calculate clicked');
+  });
   lifestyleForm.appendChild(button);
 
   this.container.appendChild(lifestyleForm);
@@ -61,6 +56,12 @@ LifestyleView.prototype.createInput = function (type, value) {
   inputElement.type = type;
   inputElement.value = value;
   return inputElement;
+};
+
+LifestyleView.prototype.createButton = function () {
+  const button = this.createInput('button', 'Calculate');
+  button.id = 'submit-button';
+  return button;
 };
 
 module.exports = LifestyleView;

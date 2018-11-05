@@ -1,1 +1,5 @@
-  // add clothes.value + electronics.value + cosmetics.value
+const AddValues = function(arrayOfValues) {
+  
+};
+
+module.exports = AddValues;
