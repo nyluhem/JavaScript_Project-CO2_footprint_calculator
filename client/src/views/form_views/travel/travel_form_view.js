@@ -8,7 +8,8 @@ TravelFormView.prototype.setupEventListeners = function() {
   this.element.addEventListener('submit', (evt) => {
     evt.preventDefault();
     const form = evt.target;
-    const answerArrayed = this.getValues();
+    const answerArray = this.getValues();
+    console.log(answerArray)
     // const carAnswer = document.querySelector('input[name="car-miles"]:checked').value;
     // const busAnswer = document.querySelector('input[name="bus-miles"]:checked').value;
     // const bikeAnswer = document.querySelector('input[name="bike-miles"]:checked').value;
