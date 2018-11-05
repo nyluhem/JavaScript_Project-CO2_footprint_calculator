@@ -4,7 +4,6 @@ const PubSub = {
       detail: payload
     });
     document.dispatchEvent(event);
-    console.log(channel, payload);
   },
 
   subscribe: function (channel, callback) {

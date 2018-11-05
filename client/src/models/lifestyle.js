@@ -1,15 +1,15 @@
 const PubSub = require('../helpers/pub_sub.js');
 
-
-const AddValues = function(values) {
-  this.values = values;
+const LifestyleModel = function() {
+  this.values = [];
 };
 
-AddValues.prototype.addValus = function () {
+LifestyleModel.prototype.addValues = function () {
   PubSub.subscribe('LifestyleView:values', (event) => {
-    // sum stuff
     console.log(event.detail);
+    const array = event.detail;
+    
   });
 };
 
-module.exports = AddValues;
+module.exports = LifestyleModel;

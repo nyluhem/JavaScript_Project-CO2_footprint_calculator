@@ -39,7 +39,6 @@ LifestyleView.prototype.createForm = function () {
   lifestyleForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const arrayOfValues = [clothes.value, cosmetics.value, electronics.value];
-    console.log(arrayOfValues);
     PubSub.publish('LifestyleView:values', arrayOfValues);
   });
 
