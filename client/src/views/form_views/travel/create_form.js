@@ -4,20 +4,10 @@ const CreateTravelForm = function(container) {
   this.container = container
 };
 
-// CreateTravelForm.prototype.bindEvents = function () {
-//   this.container.innerHTML = ""
-//   const form =
-// };
-//
-// SightingsGridView.prototype.bindEvents = function () {
-//   PubSub.subscribe('Sightings:data-loaded', (evt) => {
-//     this.render(evt.detail);
-//   });
-// };
-
 CreateTravelForm.prototype.createForm = function () {
   const form = document.createElement("form");
   form.classList.add('travel-form');
+  form.id = ("travel-form");
 
   header = document.createElement("h2");
   header.textContent = "Please enter travel details:"
@@ -35,10 +25,9 @@ CreateTravelForm.prototype.createForm = function () {
   const submitButton = this.createSubmitButton();
   form.appendChild(submitButton);
 
-  // this.element = form;
   const newForm = this.container.appendChild(form)
+  console.log(newForm)
   return newForm;
-  // return form;
 };
 
 CreateTravelForm.prototype.createCarQuestion = function () {
@@ -53,40 +42,25 @@ CreateTravelForm.prototype.createCarQuestion = function () {
   carQuestion.textContent = "How many miles a week do you drive:"
   carDiv.appendChild(carQuestion)
 
-  const carOptionOne = document.createElement("input");
-  carOptionOne.type = "radio"
-  carOptionOne.name = "car-miles"
-  carOptionOne.value = "0"
-  carOptionOne.id = "option-one"
-  carOptionOne.checked = true;
-
-  const labelCarOptionOne = document.createElement("label");
-  labelCarOptionOne.textContent = "0"
-  labelCarOptionOne.id = "option-one"
+  const carOptionOne = this.createRadioButton("car-miles", "0", "car-option-one", true);
+  const labelCarOptionOne = this.createLabel("0", "car-option-one");
 
   carDiv.appendChild(carOptionOne)
   carDiv.appendChild(labelCarOptionOne)
 
-  const carOptionTwo = document.createElement("input");
-  carOptionTwo.type = "radio";
-  carOptionTwo.name = "car-miles";
-  carOptionTwo.value = "1-10";
-  carOptionTwo.id = "option-two"
-
-  const labelCarOptionTwo = document.createElement("label");
-  labelCarOptionTwo.textContent = "1-10"
-  labelCarOptionTwo.for = "option-two"
+  const carOptionTwo = this.createRadioButton("car-miles", "10", "car-option-two");
+  const labelCarOptionTwo = this.createLabel("1-10", "car-option-two");
 
   carDiv.appendChild(carOptionTwo)
   carDiv.appendChild(labelCarOptionTwo)
 
-  const carOptionThree = this.createRadioButton("car-miles", "11-20", "car-option-three");
+  const carOptionThree = this.createRadioButton("car-miles", "20", "car-option-three");
   const labelCarOptionThree = this.createLabel("11-20", "car-option-three");
 
   carDiv.appendChild(carOptionThree)
   carDiv.appendChild(labelCarOptionThree)
 
-  const carOptionFour = this.createRadioButton("car-miles", "20+", "car-option-four");
+  const carOptionFour = this.createRadioButton("car-miles", "30", "car-option-four");
   const labelCarOptionFour = this.createLabel("20+", "car-option-four");
 
   carDiv.appendChild(carOptionFour)
@@ -114,19 +88,19 @@ CreateTravelForm.prototype.createPublicTransportQuestion = function () {
   busDiv.appendChild(busOptionOne)
   busDiv.appendChild(labelBusOptionOne)
 
-  const busOptionTwo = this.createRadioButton("bus-miles", "1-10", "bus-option-two");
+  const busOptionTwo = this.createRadioButton("bus-miles", "5", "bus-option-two");
   const labelBusOptionTwo = this.createLabel("1-10", "bus-option-two");
 
   busDiv.appendChild(busOptionTwo)
   busDiv.appendChild(labelBusOptionTwo)
 
-  const busOptionThree = this.createRadioButton("bus-miles", "11-20", "bus-option-three");
+  const busOptionThree = this.createRadioButton("bus-miles", "10", "bus-option-three");
   const labelBusOptionThree = this.createLabel("11-20", "bus-option-three");
 
   busDiv.appendChild(busOptionThree)
   busDiv.appendChild(labelBusOptionThree)
 
-  const busOptionFour = this.createRadioButton("bus-miles", "20+", "bus-option-four");
+  const busOptionFour = this.createRadioButton("bus-miles", "15", "bus-option-four");
   const labelBusOptionFour = this.createLabel("20+", "bus-option-four");
 
   busDiv.appendChild(busOptionFour)
@@ -147,13 +121,13 @@ CreateTravelForm.prototype.createNonFootprintQuestion = function () {
   bikeQuestion.textContent = "Do you cycle or walk to work (if you cycle/walk some of the way as part of your journey then please also calculate mileage of public/private transport):"
   bikeDiv.appendChild(bikeQuestion)
 
-  const bikeOptionOne = this.createRadioButton("bike-miles", "yes", "bike-option-one");
+  const bikeOptionOne = this.createRadioButton("bike-miles", "0", "bike-option-one");
   const labelBikeOptionOne = this.createLabel("Yes", "bike-option-one");
 
   bikeDiv.appendChild(bikeOptionOne)
   bikeDiv.appendChild(labelBikeOptionOne)
 
-  const bikeOptionTwo = this.createRadioButton("bike-miles", "no", "bike-option-two", true);
+  const bikeOptionTwo = this.createRadioButton("bike-miles", "0", "bike-option-two", true);
   const labelBikeOptionTwo = this.createLabel("No", "bike-option-two");
 
   bikeDiv.appendChild(bikeOptionTwo)
