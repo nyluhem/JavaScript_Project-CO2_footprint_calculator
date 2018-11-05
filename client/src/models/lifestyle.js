@@ -4,12 +4,19 @@ const LifestyleModel = function() {
   this.values = [];
 };
 
-LifestyleModel.prototype.addValues = function () {
+LifestyleModel.prototype.getValues = function () {
   PubSub.subscribe('LifestyleView:values', (event) => {
-    console.log(event.detail);
-    const array = event.detail;
-    
+    const checkedValues = event.detail;
+    this.add(checkedValues);
   });
+};
+
+LifestyleModel.prototype.add = function (values) {
+  const arrayOfIntegers = values.map(value => parseInt(value));
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  const result = arrayOfIntegers.reduce(reducer);
+  console.log(result);
+  return result;
 };
 
 module.exports = LifestyleModel;

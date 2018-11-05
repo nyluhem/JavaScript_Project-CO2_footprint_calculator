@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const PubSub = __webpack_require__(/*! ./helpers/pub_sub.js */ \"./client/src/helpers/pub_sub.js\");\nconst LifestyleView = __webpack_require__(/*! ./views/lifestyle_form_view.js */ \"./client/src/views/lifestyle_form_view.js\");\nconst LifestyleModel = __webpack_require__(/*! ./models/lifestyle.js */ \"./client/src/models/lifestyle.js\");\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  console.log(\"And I knew exactly what to do. But in a much more real sense, I had no idea what to do.\\n - Michael Scott\");\n\n  const container = document.querySelector('#forms-window');\n  const lifestyleForm = new LifestyleView(container);\n  lifestyleForm.bindEvents();\n\n  const lifestyleValues = new LifestyleModel();\n  lifestyleValues.addValues();\n});\n\n\n//# sourceURL=webpack:///./client/src/app.js?");
+eval("const PubSub = __webpack_require__(/*! ./helpers/pub_sub.js */ \"./client/src/helpers/pub_sub.js\");\nconst LifestyleView = __webpack_require__(/*! ./views/lifestyle_form_view.js */ \"./client/src/views/lifestyle_form_view.js\");\nconst LifestyleModel = __webpack_require__(/*! ./models/lifestyle.js */ \"./client/src/models/lifestyle.js\");\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  console.log(\"And I knew exactly what to do. But in a much more real sense, I had no idea what to do.\\n - Michael Scott\");\n\n  const container = document.querySelector('#forms-window');\n  const lifestyleForm = new LifestyleView(container);\n  lifestyleForm.bindEvents();\n\n  const lifestyleValues = new LifestyleModel();\n  lifestyleValues.getValues();\n});\n\n\n//# sourceURL=webpack:///./client/src/app.js?");
 
 /***/ }),
 
@@ -115,7 +115,7 @@ eval("const PubSub = {\n  publish: function (channel, payload) {\n    const even
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const PubSub = __webpack_require__(/*! ../helpers/pub_sub.js */ \"./client/src/helpers/pub_sub.js\");\n\nconst LifestyleModel = function() {\n  this.values = [];\n};\n\nLifestyleModel.prototype.addValues = function () {\n  PubSub.subscribe('LifestyleView:values', (event) => {\n    console.log(event.detail);\n    const array = event.detail;\n    \n  });\n};\n\nmodule.exports = LifestyleModel;\n\n\n//# sourceURL=webpack:///./client/src/models/lifestyle.js?");
+eval("const PubSub = __webpack_require__(/*! ../helpers/pub_sub.js */ \"./client/src/helpers/pub_sub.js\");\n\nconst LifestyleModel = function() {\n  this.values = [];\n};\n\nLifestyleModel.prototype.getValues = function () {\n  PubSub.subscribe('LifestyleView:values', (event) => {\n    const checkedValues = event.detail;\n    this.add(checkedValues);\n  });\n};\n\nLifestyleModel.prototype.add = function (values) {\n  const arrayOfIntegers = values.map(value => parseInt(value));\n  const reducer = (accumulator, currentValue) => accumulator + currentValue;\n  const result = arrayOfIntegers.reduce(reducer);\n  console.log(result);\n  return result;\n};\n\nmodule.exports = LifestyleModel;\n\n\n//# sourceURL=webpack:///./client/src/models/lifestyle.js?");
 
 /***/ }),
 

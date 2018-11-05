@@ -10,5 +10,5 @@ document.addEventListener('DOMContentLoaded', () => {
   lifestyleForm.bindEvents();
 
   const lifestyleValues = new LifestyleModel();
-  lifestyleValues.addValues();
+  lifestyleValues.getValues();
 });
