@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const formContainer = document.querySelector("div#travel-form-placement")
   const newForm = new TravelForm(formContainer);
-  newForm.createForm;
-  console.log(newForm.createForm)
+  newForm.createForm();
 
 //   const sightingsContainer = document.querySelector('div#sightings');
 // const sightingsGridView = new SightingGridView(sightingsContainer);

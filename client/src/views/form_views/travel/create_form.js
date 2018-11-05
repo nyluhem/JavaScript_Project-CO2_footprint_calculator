@@ -15,8 +15,7 @@ const CreateTravelForm = function(container) {
 //   });
 // };
 
-CreateTravelForm.prototype.createForm = function (element) {
-  this.element = element
+CreateTravelForm.prototype.createForm = function () {
   const form = document.createElement("form");
   form.classList.add('travel-form');
 
@@ -31,14 +30,15 @@ CreateTravelForm.prototype.createForm = function (element) {
   form.appendChild(publicTransportQuestion);
 
   const nonFootprintQuestion = this.createNonFootprintQuestion();
-  form.appendChild(nonFootprintQuestion);s
+  form.appendChild(nonFootprintQuestion);
 
   const submitButton = this.createSubmitButton();
   form.appendChild(submitButton);
 
   // this.element = form;
-  return form;
-  this.element.appendChild(form)
+  const newForm = this.container.appendChild(form)
+  return newForm;
+  // return form;
 };
 
 CreateTravelForm.prototype.createCarQuestion = function () {
@@ -198,8 +198,8 @@ CreateTravelForm.prototype.createNonFootprintQuestion = function () {
   bikeOptionOne.checked = false;
 
   const labelBikeOptionOne = document.createElement("label");
-  labelBusOptionOne.textContent = "Yes"
-  labelBusOptionOne.id = "option-one"
+  labelBikeOptionOne.textContent = "Yes"
+  labelBikeOptionOne.id = "option-one"
 
   bikeDiv.appendChild(bikeOptionOne)
   bikeDiv.appendChild(labelBikeOptionOne)
@@ -214,10 +214,12 @@ CreateTravelForm.prototype.createNonFootprintQuestion = function () {
 
 const labelBikeOptionTwo = document.createElement("label");
 labelBikeOptionTwo.textContent = "No"
-labelBikeOptionTwos.id = "option-two"
+labelBikeOptionTwo.id = "option-two"
 
 bikeDiv.appendChild(bikeOptionTwo)
 bikeDiv.appendChild(labelBikeOptionTwo)
+
+  return bikeDiv
 
 };
 
