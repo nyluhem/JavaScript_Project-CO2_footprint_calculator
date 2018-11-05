@@ -12,5 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const formView = new TravelFormView(form);
   formView.setupEventListeners();
 
+  
 
 });

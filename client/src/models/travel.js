@@ -16,6 +16,14 @@ const TravelCalculator = function (){
 
   //Will also need to be able to post this submitted information, and edit it.
 
+  // const carAnswer = document.querySelector('input[name="car-miles"]:checked').value;
+  // const busAnswer = document.querySelector('input[name="bus-miles"]:checked').value;
+  // const bikeAnswer = document.querySelector('input[name="bike-miles"]:checked').value;
+  // const answerArray = [carAnswer, busAnswer, bikeAnswer];
+  // const mappedArray = answerArray.map(x => parseInt(x))
+  // const reducer = (accumulator, currentValue) => accumulator + currentValue
+  // const sum = mappedArray.reduce(reducer)
+  // console.log(sum)
 
 
 module.exports = TravelCalculator
