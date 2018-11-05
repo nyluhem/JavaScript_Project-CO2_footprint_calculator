@@ -91,7 +91,6 @@
   !*** ./client/src/app.js ***!
   \***************************/
 /*! no static exports found */
-<<<<<<< HEAD
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("const TravelForm = __webpack_require__(/*! ./views/form_views/travel/create_form.js */ \"./client/src/views/form_views/travel/create_form.js\")\nconst TravelFormView = __webpack_require__(/*! ./views/form_views/travel/travel_form_view.js */ \"./client/src/views/form_views/travel/travel_form_view.js\");\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n\n  const formContainer = document.querySelector(\"div#travel-form-placement\")\n  const newForm = new TravelForm(formContainer);\n  newForm.createForm();\n\n  const form = document.querySelector(\"form#travel-form\");\n  const formView = new TravelFormView(form);\n  formView.setupEventListeners();\n\n  \n\n});\n\n\n//# sourceURL=webpack:///./client/src/app.js?");
@@ -128,11 +127,6 @@ eval("const PubSub = __webpack_require__(/*! ../../../helpers/pub_sub.js */ \"./
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("const PubSub = __webpack_require__(/*! ../../../helpers/pub_sub.js */ \"./client/src/helpers/pub_sub.js\");\n\nconst TravelFormView = function (formElement) {\n  this.element = formElement\n};\n\nTravelFormView.prototype.setupEventListeners = function() {\n  this.element.addEventListener('submit', (evt) => {\n    evt.preventDefault();\n    const form = evt.target;\n    const answerArray = this.getValues();\n    console.log(answerArray)\n    // const carAnswer = document.querySelector('input[name=\"car-miles\"]:checked').value;\n    // const busAnswer = document.querySelector('input[name=\"bus-miles\"]:checked').value;\n    // const bikeAnswer = document.querySelector('input[name=\"bike-miles\"]:checked').value;\n    // const answerArray = [carAnswer, busAnswer, bikeAnswer];\n    // const mappedArray = answerArray.map(x => parseInt(x))\n    // const reducer = (accumulator, currentValue) => accumulator + currentValue\n    // const sum = mappedArray.reduce(reducer)\n    // console.log(sum)\n    form.reset();\n\n\n  });\n};\n\nTravelFormView.prototype.getValues = function () {\n  const answerArray = [];\n  const carAnswer = document.querySelector('input[name=\"car-miles\"]:checked').value;\n  const busAnswer = document.querySelector('input[name=\"bus-miles\"]:checked').value;\n  const bikeAnswer = document.querySelector('input[name=\"bike-miles\"]:checked').value;\n\n  answerArray.push(carAnswer, busAnswer, bikeAnswer);\n  return answerArray\n  // console.log(\"hello\");\n};\n\n\n\nmodule.exports = TravelFormView\n\n\n//# sourceURL=webpack:///./client/src/views/form_views/travel/travel_form_view.js?");
-=======
-/***/ (function(module, exports) {
-
-eval("\n\n//# sourceURL=webpack:///./client/src/app.js?");
->>>>>>> develop
 
 /***/ })
 
