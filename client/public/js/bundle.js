@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const PubSub = __webpack_require__(/*! ./helpers/pub_sub.js */ \"./client/src/helpers/pub_sub.js\");\nconst LifestyleView = __webpack_require__(/*! ./views/lifestyle_form_view.js */ \"./client/src/views/lifestyle_form_view.js\");\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  console.log(\"And I knew exactly what to do. But in a much more real sense, I had no idea what to do.\\n - Michael Scott\");\n\n  const container = document.querySelector('#forms-window');\n  const lifestyleForm = new LifestyleView(container);\n  lifestyleForm.bindEvents();\n\n\n});\n\n\n//# sourceURL=webpack:///./client/src/app.js?");
+eval("const PubSub = __webpack_require__(/*! ./helpers/pub_sub.js */ \"./client/src/helpers/pub_sub.js\");\nconst LifestyleView = __webpack_require__(/*! ./views/lifestyle_form_view.js */ \"./client/src/views/lifestyle_form_view.js\");\nconst AddValues = __webpack_require__(/*! ./models/lifestyle.js */ \"./client/src/models/lifestyle.js\");\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  console.log(\"And I knew exactly what to do. But in a much more real sense, I had no idea what to do.\\n - Michael Scott\");\n\n  const container = document.querySelector('#forms-window');\n  const lifestyleForm = new LifestyleView(container);\n  lifestyleForm.bindEvents();\n\n});\n\n\n//# sourceURL=webpack:///./client/src/app.js?");
 
 /***/ }),
 
@@ -104,7 +104,18 @@ eval("const PubSub = __webpack_require__(/*! ./helpers/pub_sub.js */ \"./client/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("const PubSub = {\n  publish: function (channel, payload) {\n    const event = new CustomEvent(channel, {\n      detail: payload\n    });\n    document.dispatchEvent(event);\n  },\n\n  subscribe: function (channel, callback) {\n    document.addEventListener(channel, callback);\n  }\n};\n\nmodule.exports = PubSub;\n\n\n//# sourceURL=webpack:///./client/src/helpers/pub_sub.js?");
+eval("const PubSub = {\n  publish: function (channel, payload) {\n    const event = new CustomEvent(channel, {\n      detail: payload\n    });\n    document.dispatchEvent(event);\n    console.log(channel, payload);\n  },\n\n  subscribe: function (channel, callback) {\n    document.addEventListener(channel, callback);\n  }\n};\n\nmodule.exports = PubSub;\n\n\n//# sourceURL=webpack:///./client/src/helpers/pub_sub.js?");
+
+/***/ }),
+
+/***/ "./client/src/models/lifestyle.js":
+/*!****************************************!*\
+  !*** ./client/src/models/lifestyle.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const PubSub = __webpack_require__(/*! ../helpers/pub_sub.js */ \"./client/src/helpers/pub_sub.js\");\n\n\nconst AddValues = function(values) {\n  this.values = values;\n};\n\nAddValues.prototype.addValus = function () {\n  PubSub.subscribe('LifestyleView:values', (event) => {\n    // sum stuff\n    console.log(event.detail);\n  });\n};\n\nmodule.exports = AddValues;\n\n\n//# sourceURL=webpack:///./client/src/models/lifestyle.js?");
 
 /***/ }),
 
