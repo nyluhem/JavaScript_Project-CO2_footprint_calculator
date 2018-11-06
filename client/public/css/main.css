@@ -22,3 +22,7 @@ li {
 li:hover {
   color: LightBlue;
 }
+
+input {
+  margin-top: 20px;
+}

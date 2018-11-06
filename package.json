@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "node server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha client/src/models/specs",
     "server:dev": "nodemon server/server.js",
     "build": "webpack -w"
   },
@@ -27,6 +27,7 @@
     "nodemon": "^1.18.5"
   },
   "devDependencies": {
+    "mocha": "^5.2.0",
     "webpack": "^4.24.0",
     "webpack-cli": "^3.1.2"
   }
