@@ -3,21 +3,48 @@
   <head>
     <meta charset="utf-8">
     <title>CO2 Footprint Calculator</title>
+    <link rel="stylesheet" type= "text/css" href="css/main.css">
     <script src="./js/bundle.js"></script>
-    <link type="text/css" rel="stylesheet" href="./css/main.css">
   </head>
-
   <body>
+    <h1>HEADING  1</h1>
+    <p>CO2 footprint paragraph</p>
     <section>
-      <ul>
-        <li id="travel-menu-item">Travel</li>
-        <li id="food-menu-item">Food</li>
-        <li id="lifestyle-menu-item">Lifestyle</li>
-      </ul>
+      <nav id="submenu">
+        <ul>
+          <li id="travel-menu-item">Travel</li>
+          <li id="food-menu-item">Food</li>
+          <li id="lifestyle-menu-item">Lifestyle</li>
+        </ul>
+      </div>
       <div id="forms-window">
+      </div>
+
+      <div id="food-form">
 
       </div>
-    </section>
+
+      <div id="food-forms-window">
+      </div>
+
+      <div id="travel-form-placement"></div>
+
+
+  <div class="row">
+  <div class="column" onclick="openTab('b1');" style="background:#BBCBCB;">TRAVEL</div>
+
+  <div class="row">
+  <div class="column" onclick="openTab('b2');" style="background:#4C8577;">FOOD</div>
+
+  <div class="row">
+  <div class="column" onclick="openTab('b3');" style="background:#69A2B0;">LIFESTYLE</div>
+
+
+  <div id="b1" class="containerTab" style="display:none;background:#BBCBCB;">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>TRAVEL</h2>
+  <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+</div>
 
   </body>
 </html>

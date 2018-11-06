@@ -1,5 +1,5 @@
 {
-  "name": "co2_footprint_calculator",
+  "name": "co2-footprint-calculator",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -16,10 +16,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/metamoni/co2-footprint-calculator/issues"
-  },
-  "homepage": "https://github.com/metamoni/co2-footprint-calculator#readme",
+  "bugs": {},
+  "homepage": "",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
