@@ -1,4 +1,4 @@
-const PubSub = require('../helpers/pub_sub.js')
+const PubSub = require('../../../helpers/pub_sub.js')
 
 const FoodView = function (container) {
   this.container = container;

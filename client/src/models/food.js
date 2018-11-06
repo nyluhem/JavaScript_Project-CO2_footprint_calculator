@@ -1,11 +1,8 @@
 const PubSub = require('../helpers/pub_sub.js');
-const FoodView = require('../views/food_form_view.js')
 
 const FoodModel = function() {
   this.formvalues = []
 }
-
-
 
 FoodModel.prototype.getFormValues = function () {
   PubSub.subscribe("FoodForm:values", (event) => {

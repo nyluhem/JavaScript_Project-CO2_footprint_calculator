@@ -1,5 +1,5 @@
-const PubSub = require('../helpers/pub_sub.js')
-const FoodModel = require('../models/food.js')
+const PubSub = require('../../../helpers/pub_sub.js')
+const FoodModel = require('../../../models/food.js')
 
 const FoodFinalView = function (element) {
   this.element = element;
