@@ -1,7 +1,9 @@
-<<<<<<< HEAD
+
 const TravelForm = require("./views/form_views/travel/create_form.js")
 const TravelFormView = require("./views/form_views/travel/travel_form_view.js");
 const TravelCalculator = require("./models/travel.js")
+const LifestyleView = require('./views/lifestyle_form_view.js');
+const LifestyleModel = require('./models/lifestyle.js');
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -16,14 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const travelCalculator = new TravelCalculator();
   travelCalculator.bindEvents();
-=======
-const PubSub = require('./helpers/pub_sub.js');
-const LifestyleView = require('./views/lifestyle_form_view.js');
-const LifestyleModel = require('./models/lifestyle.js');
-// const GridView = require('./views/grid_view.js');
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log("And I knew exactly what to do. But in a much more real sense, I had no idea what to do.\n - Michael Scott");
+// const GridView = require('./views/grid_view.js');
 
   const container = document.querySelector('#forms-window');
   const lifestyleForm = new LifestyleView(container);
@@ -31,15 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const lifestyleValues = new LifestyleModel();
   lifestyleValues.getValues();
-<<<<<<< HEAD
->>>>>>> 277847eb4471575141a4acdf2a9429eb3a2cc24e
-=======
-
-// -----------
 
   // const gridContainer = document.querySelector('div#results');
   // const gridView = new GridView(gridcontainer);
   // gridView.bindEvents();
-
->>>>>>> 4414aa2a04d52ebe7ef046e4656763f36186963b
 });

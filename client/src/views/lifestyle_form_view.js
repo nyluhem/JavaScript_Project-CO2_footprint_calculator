@@ -13,6 +13,7 @@ LifestyleView.prototype.bindEvents = function () {
 
 LifestyleView.prototype.createForm = function () {
   event.preventDefault();
+  console.log(this.container)
   this.container.innerHTML = '';
 
   const lifestyleForm = document.createElement('form');
