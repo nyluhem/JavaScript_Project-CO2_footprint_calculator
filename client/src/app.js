@@ -11,4 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const lifestyleValues = new LifestyleModel();
   lifestyleValues.getValues();
+
+// FOOD FORM
+  const form = document.querySelector('#food-form-div')
+  const newForm = new FoodView(form);
+  const food = newForm.bindEvents();
+  console.log(food);
+
+
+  const foodValues = new FoodModel()
+  console.log(foodValues);
+  foodValues.getFormValues();
+
+  const infoFood = document.querySelector("div#forms-window")
+  const infoFoodInfo = new FoodFinalView(infoFood);
+  infoFoodInfo.foodCarbon();
+
+
+
 });
