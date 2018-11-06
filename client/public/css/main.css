@@ -1,4 +1,29 @@
+
 body {
-  font: Helvetica;
-  background-color: green:
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  color: #70ABAF;
+  margin: 0;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+}
+
+.containerTab {
+    padding: 20px;
+    color: white;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
