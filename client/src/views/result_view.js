@@ -1,30 +1,36 @@
 const PubSub = require('../helpers/pub_sub.js');
 
 const ResultView = function () {
-
+this.container = container;
 };
 
 ResultView.prototype.bindEvents = function () {
-  PubSub.subscribe('CO2Checker:result-calcuated', (event) => {
+  PubSub.subscribe('CO2Checker:result-calculated', (event) => {
     const result = event.detail;
     this.displayResult(result);
   });
 };
 
-ResultView.prototype.displayResult = function (result) {
-  const resultElement = document.querySelector('#result');
-  if (result) {
-    resultElement.textContent = "Your carbon footprint is lower than expected!";
-  } else {
-    resultElement.textContent = "You are a little high on your carbon footprint";
-  }
+ResultView.prototype.render = function (data) {
+  this.container.innerHTML = " ";
+  const resultView = document.createElement('p');
+  resultView.textContent  = data.result;
+  this.container.appendChild(resultView);
 };
+
+// ResultView.prototype.displayResult = function (result) {
+//   const resultElement = document.querySelector('#result');
+//   if (result) {
+//     resultElement.textContent = "Your carbon footprint is lower than expected!";
+//   } else {
+//     resultElement.textContent = "You are a little high on your carbon footprint";
+//   }
+// };
 
 // random messages need to be added here for results
 //
 // Transport:
 // flights to be added **
-//
 // “Why not walk or cycle today?”
 // “You could car share with someone”
 // “Run more errands in your next trip?”

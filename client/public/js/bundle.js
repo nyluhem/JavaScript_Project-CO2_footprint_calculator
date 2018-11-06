@@ -91,6 +91,20 @@
   !*** ./client/src/app.js ***!
   \***************************/
 /*! no static exports found */
+<<<<<<< HEAD
+=======
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const PubSub = __webpack_require__(/*! ./helpers/pub_sub.js */ \"./client/src/helpers/pub_sub.js\");\nconst LifestyleView = __webpack_require__(/*! ./views/lifestyle_form_view.js */ \"./client/src/views/lifestyle_form_view.js\");\nconst LifestyleModel = __webpack_require__(/*! ./models/lifestyle.js */ \"./client/src/models/lifestyle.js\");\n// const GridView = require('./views/grid_view.js');\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  console.log(\"And I knew exactly what to do. But in a much more real sense, I had no idea what to do.\\n - Michael Scott\");\n\n  const container = document.querySelector('#forms-window');\n  const lifestyleForm = new LifestyleView(container);\n  lifestyleForm.bindEvents();\n\n  const lifestyleValues = new LifestyleModel();\n  lifestyleValues.getValues();\n\n// -----------\n\n  // const gridContainer = document.querySelector('div#results');\n  // const gridView = new GridView(gridcontainer);\n  // gridView.bindEvents();\n\n});\n\n\n//# sourceURL=webpack:///./client/src/app.js?");
+
+/***/ }),
+
+/***/ "./client/src/helpers/pub_sub.js":
+/*!***************************************!*\
+  !*** ./client/src/helpers/pub_sub.js ***!
+  \***************************************/
+/*! no static exports found */
+>>>>>>> 4414aa2a04d52ebe7ef046e4656763f36186963b
 /***/ (function(module, exports) {
 
 eval("throw new Error(\"Module parse failed: Unexpected token (1:0)\\nYou may need an appropriate loader to handle this file type.\\n> <<<<<<< HEAD\\n| const TravelForm = require(\\\"./views/form_views/travel/create_form.js\\\")\\n| const TravelFormView = require(\\\"./views/form_views/travel/travel_form_view.js\\\");\");\n\n//# sourceURL=webpack:///./client/src/app.js?");
