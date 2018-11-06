@@ -1,5 +1,5 @@
 const PubSub = require('../helpers/pub_sub.js');
-const FoodView = require('../views/food_form_view_2.js')
+const FoodView = require('../views/food_form_view.js')
 
 const FoodModel = function() {
   this.formvalues = []
