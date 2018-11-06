@@ -9,20 +9,16 @@ const FoodFinalView = require('./views/food_final_view.js');
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const formContainer = document.querySelector("div#travel-form-placement")
+  const formContainer = document.querySelector("#forms-window")
   const newFormTravel = new TravelForm(formContainer);
-<<<<<<< HEAD
-  newFormTravel.createForm();
   newFormTravel.getResults();
-=======
   newFormTravel.bindEvents();
   // newFormTravel.createForm();
   // newFormTravel.getResults();
->>>>>>> feature/edit
 
-  const formTravel = document.querySelector("form#travel-form");
-  const formViewTravel = new TravelFormView(formTravel);
-  formViewTravel.setupEventListeners();
+  // const formTravel = document.querySelector("form#travel-form");
+  // const formViewTravel = new TravelFormView(formTravel);
+  // formViewTravel.setupEventListeners();
 
   const travelCalculator = new TravelCalculator();
   travelCalculator.bindEvents();
@@ -35,13 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const lifestyleValues = new LifestyleModel();
   lifestyleValues.getValues();
-<<<<<<< HEAD
 
-  const form =
-  document.querySelector('#forms-window')
-=======
   const form = document.querySelector('#forms-window')
->>>>>>> 1acf8bf8273fdbcee9f1636a8f15722c27f161d3
   const newForm = new FoodView(form);
   const food = newForm.bindEvents();
   console.log(food);
