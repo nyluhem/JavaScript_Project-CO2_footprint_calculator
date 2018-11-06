@@ -1,5 +1,4 @@
 const TravelForm = require("./views/form_views/travel/create_form.js")
-const TravelFormView = require("./views/form_views/travel/travel_form_view.js");
 const TravelCalculator = require("./models/travel.js")
 const LifestyleView = require('./views/lifestyle_form_view.js');
 const LifestyleModel = require('./models/lifestyle.js');
@@ -11,14 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const formContainer = document.querySelector("#forms-window")
   const newFormTravel = new TravelForm(formContainer);
-  newFormTravel.getResults();
   newFormTravel.bindEvents();
-  // newFormTravel.createForm();
-  // newFormTravel.getResults();
-
-  // const formTravel = document.querySelector("form#travel-form");
-  // const formViewTravel = new TravelFormView(formTravel);
-  // formViewTravel.setupEventListeners();
+  newFormTravel.getResults();
 
   const travelCalculator = new TravelCalculator();
   travelCalculator.bindEvents();
