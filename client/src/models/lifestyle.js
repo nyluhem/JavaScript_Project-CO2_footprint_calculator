@@ -7,15 +7,16 @@ const LifestyleModel = function() {
 LifestyleModel.prototype.getValues = function () {
   PubSub.subscribe('LifestyleView:values', (event) => {
     const checkedValues = event.detail;
-    this.add(checkedValues);
+    const total = this.add(checkedValues);
+    PubSub.publish('LifestyleView:result', total);
   });
+
 };
 
 LifestyleModel.prototype.add = function (values) {
   const arrayOfIntegers = values.map(value => parseInt(value));
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
   const result = arrayOfIntegers.reduce(reducer);
-  console.log(result);
   return result;
 };
 

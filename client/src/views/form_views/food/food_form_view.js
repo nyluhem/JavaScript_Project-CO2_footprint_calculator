@@ -1,4 +1,4 @@
-const PubSub = require('../helpers/pub_sub.js')
+const PubSub = require('../../../helpers/pub_sub.js')
 
 const FoodView = function (container) {
   this.container = container;
@@ -90,7 +90,7 @@ foodForm.appendChild(submitButton);
 foodForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const arrays = [meat.value, vegetarian.value, local.value, imported.value,takeaway.value,homemade.value]
-  console.log(arrays);
+  // console.log(arrays);
   PubSub.publish("FoodForm:values", arrays);
   foodForm.innerHTML = '';
 })
