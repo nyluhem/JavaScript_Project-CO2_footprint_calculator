@@ -29,7 +29,6 @@
 
       <div id="travel-form-placement"></div>
 
-
   <div class="row">
   <div class="column" onclick="openTab('b1');" style="background:#BBCBCB;">TRAVEL</div>
 
@@ -44,7 +43,19 @@
   <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
   <h2>TRAVEL</h2>
   <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
-</div>
+  <li> <div class="travel-menu-item"> </li></div>
+  </div>
+
+<script>
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+</script>
 
   </body>
 </html>
