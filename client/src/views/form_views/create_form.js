@@ -37,7 +37,7 @@ CreateTravelForm.prototype.createForm = function () {
   travelForm.id = ("travel-form");
 
   header = document.createElement("h2");
-  header.textContent = "Please enter travel details:"
+  header.textContent = "Enter travel details:"
   travelForm.appendChild(header);
 
   const carQuestion = this.createCarQuestion();

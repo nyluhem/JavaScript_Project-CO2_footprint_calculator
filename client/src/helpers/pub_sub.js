@@ -4,12 +4,12 @@ const PubSub = {
       detail: payload
     });
     document.dispatchEvent(event);
-    console.log(`channel: ${channel}, payload: ${payload}`);
+    // console.log(`channel: ${channel}, payload: ${payload}`);
   },
 
   subscribe: function (channel, callback) {
     document.addEventListener(channel, callback);
-    console.log(`channel: ${channel}`);
+    // console.log(`channel: ${channel}`);
   }
 };
 

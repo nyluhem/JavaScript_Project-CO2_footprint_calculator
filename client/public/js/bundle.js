@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -197,3 +198,5 @@ eval("const PubSub = __webpack_require__(/*! ../helpers/pub_sub.js */ \"./client
 /***/ })
 
 /******/ });
+=======
+>>>>>>> f1cff7bcb8f1f3a376d22129d3f86fe05feb33af

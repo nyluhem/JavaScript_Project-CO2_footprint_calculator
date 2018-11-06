@@ -1,8 +1,9 @@
 const PubSub = require('../helpers/pub_sub.js');
-const CreateTravelForm = require('./form_views/create_form.js');
+const Highcharts = require('highcharts');
+require('highcharts/modules/exporting')(Highcharts);
 
 const ResultView = function () {
-this.container = container;
+  this.container = container;
 };
 
   ResultView.prototype.bindEvents()
@@ -56,5 +57,49 @@ ResultView.prototype.render = function (data) {
 // “Check the label next time you buy food, look for local produce.”
 // “Try a delicious vegetarian meal this week”
 // “Why not mix up the recipe and add more vegetables than meat”
+
+Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'CO2 results'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'CO2 calculator',
+        colorByPoint: true,
+        data: [{
+            name: 'Food',
+            y: 61.41,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'Travel',
+            y: 11.84
+        }, {
+            name: 'Lifestyle',
+            y: 10.85
+        }]
+    }]
+});
 
 module.exports = ResultView;

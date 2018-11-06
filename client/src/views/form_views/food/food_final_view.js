@@ -1,5 +1,5 @@
-const PubSub = require('../helpers/pub_sub.js')
-const FoodModel = require('../models/food.js')
+const PubSub = require('../../../helpers/pub_sub.js')
+const FoodModel = require('../../../models/food.js')
 
 const FoodFinalView = function (element) {
   this.element = element;
@@ -8,7 +8,7 @@ const FoodFinalView = function (element) {
 FoodFinalView.prototype.foodCarbon = function (foodpoints) {
   PubSub.subscribe("FoodInfo", (event) => {
    const carbonPoints = event.detail;
-   console.log(carbonPoints);
+   // console.log(carbonPoints);
    this.render(carbonPoints);
   })
 };

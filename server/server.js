@@ -4,6 +4,7 @@ const MongoClient = require('mongodb').MongoClient;
 const path = require('path');
 const createRouter = require('./helpers/create_router.js');
 const parser = require('body-parser');
+const Highcharts = require('highcharts');
 
 const publicPath = path.join(__dirname, '../client/public');
 app.use(express.static(publicPath));
