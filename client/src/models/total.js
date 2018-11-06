@@ -1,6 +1,7 @@
 const PubSub = require('../helpers/pub_sub.js');
 const Highcharts = require('highcharts');
 
+const TotalCalculator = function () {
 
 const Total = function() {
   this.values = {food: 0, travel: 0, lifestyle: 0};
@@ -45,4 +46,7 @@ Total.prototype.calculateTotal = function () {
   return result;
 };
 
-module.exports = Total;
+
+
+
+module.exports = TotalCalculator;

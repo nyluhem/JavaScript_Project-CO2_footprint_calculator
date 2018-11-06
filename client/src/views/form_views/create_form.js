@@ -8,7 +8,7 @@ CreateTravelForm.prototype.getResults = function () {
   PubSub.subscribe("TravelForm:display-results", (evt) => {
     const totalPoints = evt.detail
     const results = this.displayResults(totalPoints)
-    this.container.appendChild(results)
+    return results
   });
 };
 
