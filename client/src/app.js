@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const lifestyleValues = new LifestyleModel();
   lifestyleValues.getValues();
 
-  const form = 
+  const form =
   document.querySelector('#forms-window')
   const newForm = new FoodView(form);
   const food = newForm.bindEvents();
@@ -43,11 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const infoFoodInfo = new FoodFinalView(infoFood);
   infoFoodInfo.foodCarbon();
 
-});
-
   const formTravel = document.querySelector("form#travel-form");
   const formViewTravel = new TravelFormView(formTravel);
   formViewTravel.setupEventListeners();
+
+});
+
   // const gridContainer = document.querySelector('div#results');
   // const gridView = new GridView(gridcontainer);
   // gridView.bindEvents();
