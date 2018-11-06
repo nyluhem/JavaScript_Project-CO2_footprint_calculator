@@ -90,7 +90,7 @@ foodForm.appendChild(submitButton);
 foodForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const arrays = [meat.value, vegetarian.value, local.value, imported.value,takeaway.value,homemade.value]
-  console.log(arrays);
+  // console.log(arrays);
   PubSub.publish("FoodForm:values", arrays);
   foodForm.innerHTML = '';
 })

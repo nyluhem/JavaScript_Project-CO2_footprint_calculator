@@ -8,7 +8,7 @@ const FoodFinalView = function (element) {
 FoodFinalView.prototype.foodCarbon = function (foodpoints) {
   PubSub.subscribe("FoodInfo", (event) => {
    const carbonPoints = event.detail;
-   console.log(carbonPoints);
+   // console.log(carbonPoints);
    this.render(carbonPoints);
   })
 };

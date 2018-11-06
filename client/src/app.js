@@ -6,6 +6,8 @@ const LifestyleModel = require('./models/lifestyle.js');
 const FoodView = require('./views/form_views/food/food_form_view.js');
 const FoodModel = require('./models/food.js');
 const FoodFinalView = require('./views/form_views/food/food_final_view.js');
+const Total = require('./models/total.js');
+const PubSub = require('./helpers/pub_sub.js');
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -46,10 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const infoFoodInfo = new FoodFinalView(infoFood);
   infoFoodInfo.foodCarbon();
 
+  const total = new Total();
+  total.bindEvents();
+
   // const formTravel = document.querySelector("form#travel-form");
   // const formViewTravel = new TravelFormView(formTravel);
   // formViewTravel.setupEventListeners();
-
 });
 
   // const gridContainer = document.querySelector('div#results');

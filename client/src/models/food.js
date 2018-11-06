@@ -7,18 +7,18 @@ const FoodModel = function() {
 FoodModel.prototype.getFormValues = function () {
   PubSub.subscribe("FoodForm:values", (event) => {
    const foodValues = event.detail;
-   console.log(foodValues);
-   const new2 = this.getValue(foodValues)
-   const result = new2*155
+   // console.log(foodValues);
+   const new2 = this.getValue(foodValues);
+   const result = new2;
    console.log(result);
    PubSub.publish("FoodInfo", result);
   });
 };
 
 FoodModel.prototype.getValue = function (values) {
-  const integers = values.map((str) => parseInt(str))
-  console.log(integers);
-  const sum = integers.reduce((total,amount) => total + amount)
+  const integers = values.map((str) => parseInt(str));
+  // console.log(integers);
+  const sum = integers.reduce((total,amount) => total + amount);
   return sum;
 };
 
