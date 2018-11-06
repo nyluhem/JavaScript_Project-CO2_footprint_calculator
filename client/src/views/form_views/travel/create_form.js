@@ -9,29 +9,29 @@ CreateTravelForm.prototype.getResults = function () {
     const totalPoints = evt.detail
     const results = this.displayResults(totalPoints)
     this.container.appendChild(results)
-});
+  });
 };
 
-  CreateTravelForm.prototype.displayResults = function (value) {
-    const points = document.createElement("h1");
-    points.innerHTML = ""
-    points.textContent = `${value}`
-    return points
-  };
+CreateTravelForm.prototype.displayResults = function (value) {
+  const points = document.createElement("h1");
+  points.innerHTML = ""
+  points.textContent = `${value}`
+  return points
+};
 
 CreateTravelForm.prototype.bindEvents = function () {
   const menuItem = document.querySelector("#travel-menu-item");
   menuItem.addEventListener("click", (event) => {
     this.createForm();
-  })
-
-}
+  });
+};
 
 CreateTravelForm.prototype.createForm = function () {
   event.preventDefault();
   this.container.innerHTML = ""
 
   const travelForm = document.createElement("form");
+  console.log("created travel-form", travelForm);
 
   travelForm.classList.add('travel-form');
   travelForm.id = ("travel-form");
