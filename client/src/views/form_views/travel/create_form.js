@@ -14,11 +14,10 @@ CreateTravelForm.prototype.getResults = function () {
 
   CreateTravelForm.prototype.displayResults = function (value) {
     const points = document.createElement("h1");
+    points.innerHTML = ""
     points.textContent = `${value}`
     return points
   };
-
-
 
 CreateTravelForm.prototype.createForm = function () {
   this.container.innerHTML = ""
