@@ -44,3 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
   infoFoodInfo.foodCarbon();
 
 });
+
+  const formTravel = document.querySelector("form#travel-form");
+  const formViewTravel = new TravelFormView(formTravel);
+  formViewTravel.setupEventListeners();
+  // const gridContainer = document.querySelector('div#results');
+  // const gridView = new GridView(gridcontainer);
+  // gridView.bindEvents();
