@@ -5,14 +5,10 @@ const FoodView = function (container) {
 }
 
 FoodView.prototype.bindEvents = function () {
-  const menuItem = document.getElementById("food-menu-item");
-  const self = this;
-  menuItem.addEventListener('dbclick', function _listener(event) {
-    console.log("event.target",  event.target);
-    self.createForm();
-    menuItem.removeEventListener('dbclick', _listener);
+  const menuItem = document.querySelector("#food-menu-item");
+  menuItem.addEventListener("click", (event) => {
+    this.createForm()
   });
-
 };
 
 FoodView.prototype.createForm = function () {

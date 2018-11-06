@@ -19,6 +19,13 @@ CreateTravelForm.prototype.getResults = function () {
     return points
   };
 
+CreateTravelForm.prototype.bindEvents = function () {
+  const menuItem = document.querySelector("#travel-menu-item");
+  menuItem.addEventListener("click", (event) => {
+    this.createForm();
+  })
+}
+
 CreateTravelForm.prototype.createForm = function () {
   this.container.innerHTML = ""
 

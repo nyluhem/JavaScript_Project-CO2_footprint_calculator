@@ -10,19 +10,16 @@ const FoodFinalView = require('./views/food_final_view.js');
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const formContainer = document.querySelector("div#travel-form-placement")
+
+  const formContainer = document.querySelector("#forms-window")
   const newFormTravel = new TravelForm(formContainer);
-  newFormTravel.createForm();
+  newFormTravel.bindEvents();
+  // newFormTravel.createForm();
   newFormTravel.getResults();
 
-  const formTravel = document.querySelector("form#travel-form");
-  const formViewTravel = new TravelFormView(formTravel);
-  formViewTravel.setupEventListeners();
 
   const travelCalculator = new TravelCalculator();
   travelCalculator.bindEvents();
-// const GridView = require('./views/grid_view.js');
-// const GridView = require('./views/grid_view.js');
 
   const container = document.querySelector('#forms-window');
   const lifestyleForm = new LifestyleView(container);
@@ -30,7 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const lifestyleValues = new LifestyleModel();
   lifestyleValues.getValues();
-  const form = document.querySelector('#forms-window')
+
+  const form = 
+  document.querySelector('#forms-window')
   const newForm = new FoodView(form);
   const food = newForm.bindEvents();
   console.log(food);
@@ -46,6 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+  const formTravel = document.querySelector("form#travel-form");
+  const formViewTravel = new TravelFormView(formTravel);
+  formViewTravel.setupEventListeners();
   // const gridContainer = document.querySelector('div#results');
   // const gridView = new GridView(gridcontainer);
   // gridView.bindEvents();
