@@ -11,8 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const formContainer = document.querySelector("div#travel-form-placement")
   const newFormTravel = new TravelForm(formContainer);
+<<<<<<< HEAD
   newFormTravel.createForm();
   newFormTravel.getResults();
+=======
+  newFormTravel.bindEvents();
+  // newFormTravel.createForm();
+  // newFormTravel.getResults();
+>>>>>>> feature/edit
 
   const formTravel = document.querySelector("form#travel-form");
   const formViewTravel = new TravelFormView(formTravel);
@@ -49,9 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const infoFoodInfo = new FoodFinalView(infoFood);
   infoFoodInfo.foodCarbon();
 
-  const formTravel = document.querySelector("form#travel-form");
-  const formViewTravel = new TravelFormView(formTravel);
-  formViewTravel.setupEventListeners();
+  // const formTravel = document.querySelector("form#travel-form");
+  // const formViewTravel = new TravelFormView(formTravel);
+  // formViewTravel.setupEventListeners();
 
 });
 

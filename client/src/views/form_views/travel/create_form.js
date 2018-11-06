@@ -24,33 +24,37 @@ CreateTravelForm.prototype.bindEvents = function () {
   menuItem.addEventListener("click", (event) => {
     this.createForm();
   })
+
 }
 
 CreateTravelForm.prototype.createForm = function () {
+  event.preventDefault();
   this.container.innerHTML = ""
 
-  const form = document.createElement("form");
+  const travelForm = document.createElement("form");
 
-  form.classList.add('travel-form');
-  form.id = ("travel-form");
+  travelForm.classList.add('travel-form');
+  travelForm.id = ("travel-form");
 
   header = document.createElement("h2");
   header.textContent = "Please enter travel details:"
-  form.appendChild(header);
+  travelForm.appendChild(header);
 
   const carQuestion = this.createCarQuestion();
-  form.appendChild(carQuestion);
+  travelForm.appendChild(carQuestion);
 
   const publicTransportQuestion = this.createPublicTransportQuestion();
-  form.appendChild(publicTransportQuestion);
+  travelForm.appendChild(publicTransportQuestion);
 
   const nonFootprintQuestion = this.createNonFootprintQuestion();
-  form.appendChild(nonFootprintQuestion);
+  travelForm.appendChild(nonFootprintQuestion);
 
   const submitButton = this.createSubmitButton();
-  form.appendChild(submitButton);
+  travelForm.appendChild(submitButton);
 
-  const newForm = this.container.appendChild(form)
+  this.handleSubmit(travelForm);
+
+  const newForm = this.container.appendChild(travelForm)
   console.log(newForm)
   return newForm;
 };
@@ -187,6 +191,27 @@ CreateTravelForm.prototype.createSubmitButton = function () {
     detail.id = `${id}`
 
     return detail
+  };
+
+  CreateTravelForm.prototype.handleSubmit = function (formInput) {
+    formInput.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.target;
+      const answerArray = this.getValues();
+      console.log(answerArray)
+      PubSub.publish("TravelModel:send-values-array", answerArray);
+      form.reset()
+    });
+  };
+
+  CreateTravelForm.prototype.getValues = function () {
+    const answerArray = [];
+    const carAnswer = document.querySelector('input[name="car-miles"]:checked').value;
+    const busAnswer = document.querySelector('input[name="bus-miles"]:checked').value;
+    const bikeAnswer = document.querySelector('input[name="bike-miles"]:checked').value;
+
+    answerArray.push(carAnswer, busAnswer, bikeAnswer);
+    return answerArray
   };
 
 module.exports = CreateTravelForm;
