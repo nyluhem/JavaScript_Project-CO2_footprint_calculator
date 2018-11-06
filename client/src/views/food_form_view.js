@@ -4,19 +4,16 @@ const FoodView = function (container) {
   this.container = container;
 }
 
-
 FoodView.prototype.bindEvents = function () {
   const menuItem = document.getElementById("food-menu-item");
   const self = this;
-  menuItem.addEventListener('dblclick', function _listener(event) {
+  menuItem.addEventListener('dbclick', function _listener(event) {
     console.log("event.target",  event.target);
     self.createForm();
     menuItem.removeEventListener('dbclick', _listener);
   });
 
 };
-
-
 
 FoodView.prototype.createForm = function () {
   const foodForm = document.createElement("form");

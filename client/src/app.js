@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const lifestyleValues = new LifestyleModel();
   lifestyleValues.getValues();
-  const form = document.querySelector('div#food-form')
+  const form = document.querySelector('#forms-window')
   const newForm = new FoodView(form);
   const food = newForm.bindEvents();
   console.log(food);
