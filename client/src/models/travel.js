@@ -15,14 +15,19 @@ const TravelCalculator = function (){
 
   TravelCalculator.prototype.calculateTotal = function (array) {
     const mappedArray = this.mapArray(array);
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    const sumOfArray = mappedArray.reduce(reducer);
-    return sumOfArray
+    const sumOfArray = this.sum(mappedArray);
+    return sumOfArray;
   };
 
   TravelCalculator.prototype.mapArray = function (array) {
     const mappedArray = array.map(x => parseInt(x))
     return mappedArray
+  };
+
+  TravelCalculator.prototype.sum = function (array) {
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    const sumOfArray = array.reduce(reducer);
+    return sumOfArray
   };
 
 module.exports = TravelCalculator
