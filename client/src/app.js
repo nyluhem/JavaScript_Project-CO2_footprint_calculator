@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log(foodValues);
   foodValues.getFormValues();
 
-  const infoFood = document.querySelector("div#food-forms-window")
-  const infoFoodInfo = new FoodFinalView(infoFood);
-  infoFoodInfo.foodCarbon();
+  // const infoFood = document.querySelector("div#food-forms-window")
+  // const infoFoodInfo = new FoodFinalView(infoFood);
+  // infoFoodInfo.foodCarbon();
 
   const total = new Total();
   total.bindEvents();
