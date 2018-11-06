@@ -1,15 +1,21 @@
 const PubSub = require('../helpers/pub_sub.js');
+const CreateTravelForm = require('./form_views/create_form.js');
 
 const ResultView = function () {
 this.container = container;
 };
 
-ResultView.prototype.bindEvents = function () {
-  PubSub.subscribe('CO2Checker:result-calculated', (event) => {
-    const result = event.detail;
-    this.displayResult(result);
-  });
-};
+  ResultView.prototype.bindEvents()
+
+
+
+//
+// ResultView.prototype.bindEvents = function () {
+//   PubSub.subscribe('CO2Checker:result-calculated', (event) => {
+//     const result = event.detail;
+//     this.displayResult(result);
+//   });
+// };
 
 ResultView.prototype.render = function (data) {
   this.container.innerHTML = " ";
