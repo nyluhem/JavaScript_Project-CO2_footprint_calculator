@@ -2,28 +2,84 @@
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: white;
-  color: #70ABAF;
+  color: #BBCBCB;
+}
+
+h1 {
+  background-color: #BBCBCB;
+  padding: 20px;
   margin: 0;
+  color: white;
+  font-size: 60px;
+}
+
+p {
+  font-size: 14px;
+}
+
+ul {
+  list-style-type: none;
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
 
 .column {
-    float: left;
     width: 33.33%;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
-    font-size: 25px;
+    font-size: 18px;
     cursor: pointer;
     color: white;
+    display: inline;
 }
 
 .containerTab {
-    padding: 20px;
-    color: white;
+    color: #BBCBCB;
+    background-color: #BBCBCB;
 }
 
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+
+/* form */
+#forms-window {
+  color: white;
+  float: none;
+  padding: 20px;
+}
+
+#travel-menu-item {
+  background-color: #4C8577;
+}
+
+#travel-form {
+  background-color: #4C8577;
+  padding: 20px;
+}
+
+#food-menu-item {
+  background-color: #7CAD94;
+}
+
+#food-form {
+  background-color: #7CAD94;
+  padding: 20px;
+}
+
+#lifestyle-menu-item {
+  background-color: #69A2B0;
+}
+
+#lifestyle-form {
+  background-color: #69A2B0;
+  padding: 20px;
+}
+
+#result-menu-item {
+  background-color: #BBCBCB;
+}
+
+footer {
+  text-align: center;
+  background-color: #BBCBCB;
+  color: white;
 }

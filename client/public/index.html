@@ -6,56 +6,39 @@
     <link rel="stylesheet" type= "text/css" href="css/main.css">
     <script src="./js/bundle.js"></script>
   </head>
+
   <body>
-    <h1>HEADING  1</h1>
-    <p>CO2 footprint paragraph</p>
+    <h1>LOGO</h1>
+  <hr>
+    <p>RESULTS SECTION</p>
+  <hr>
+</br>
+</br>
     <section>
       <nav id="submenu">
         <ul>
-          <li id="travel-menu-item">Travel</li>
-          <li id="food-menu-item">Food</li>
-          <li id="lifestyle-menu-item">Lifestyle</li>
+          <li class="column" id="travel-menu-item">TRAVEL</li>
+          <li class="column" id="food-menu-item">FOOD</li>
+          <li class="column" id="lifestyle-menu-item">LIFESTYLE</li>
+          <li class="column" id="result-menu-item">RESULT</li>
         </ul>
-      </div>
-      <div id="forms-window">
-      </div>
 
-      <div id="food-form">
+        <script>
+        function openTab(tabName) {
+          var i, x;
+          x = document.getElementsByClassName("containerTab");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          document.getElementById(tabName).style.display = "block";
+        }
+        </script>
 
-      </div>
-
-      <div id="food-forms-window">
-      </div>
-
-      <div id="travel-form-placement"></div>
-
-  <div class="row">
-  <div class="column" onclick="openTab('b1');" style="background:#BBCBCB;">TRAVEL</div>
-
-  <div class="row">
-  <div class="column" onclick="openTab('b2');" style="background:#4C8577;">FOOD</div>
-
-  <div class="row">
-  <div class="column" onclick="openTab('b3');" style="background:#69A2B0;">LIFESTYLE</div>
-
-
-  <div id="b1" class="containerTab" style="display:none;background:#BBCBCB;">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <h2>TRAVEL</h2>
-  <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
-  <li> <div class="travel-menu-item"> </li></div>
-  </div>
-
-<script>
-function openTab(tabName) {
-  var i, x;
-  x = document.getElementsByClassName("containerTab");
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  document.getElementById(tabName).style.display = "block";
-}
-</script>
-
+      <div id="forms-window"></div>
   </body>
+
+  </section>
+  <footer>
+    <p>CO2 FOOTPRINT NAME &copy</p>
+  </footer>
 </html>
