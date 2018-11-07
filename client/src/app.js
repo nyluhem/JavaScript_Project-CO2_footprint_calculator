@@ -13,6 +13,8 @@ const Highcharts = require('highcharts');
 
 document.addEventListener("DOMContentLoaded", () => {
 
+
+
   const formContainer = document.querySelector("#forms-window")
   const newFormTravel = new TravelForm(formContainer);
   newFormTravel.bindEvents();
@@ -43,4 +45,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const total = new TotalCalculator();
   total.bindEvents();
+  // newFormTravel.onLoad();
 });
