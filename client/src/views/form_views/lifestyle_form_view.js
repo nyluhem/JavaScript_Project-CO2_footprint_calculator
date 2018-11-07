@@ -49,20 +49,20 @@ LifestyleView.prototype.createForm = function () {
   // clothesDiv.appendChild(clothes);
   // clothesDiv.appendChild(clothesLabel);
 
-  clothesDiv.appendChild(tShirtLabel);
   clothesDiv.appendChild(tShirt);
+  clothesDiv.appendChild(tShirtLabel);
 
-  clothesDiv.appendChild(trousersLabel);
   clothesDiv.appendChild(trousers);
+  clothesDiv.appendChild(trousersLabel);
 
-  clothesDiv.appendChild(coatLabel);
   clothesDiv.appendChild(coat);
+  clothesDiv.appendChild(coatLabel);
 
-  clothesDiv.appendChild(jumperLabel);
   clothesDiv.appendChild(jumper);
+  clothesDiv.appendChild(jumperLabel);
 
-  clothesDiv.appendChild(underwearLabel);
   clothesDiv.appendChild(underwear);
+  clothesDiv.appendChild(underwearLabel);
 
   lifestyleForm.appendChild(clothesDiv);
 
