@@ -28,7 +28,7 @@ ResultView.prototype.findValues = function () {
   });
 
   PubSub.subscribe('TravelForm:display-results', (event) => {
-    this.ravel = event.detail;
+    this.travel = event.detail;
   });
 
   PubSub.subscribe('LifestyleView:result', (event) => {

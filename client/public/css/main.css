@@ -20,6 +20,11 @@ h3 {
   color: #196B7F;
 }
 
+h5 {
+  color: #196B7F;
+  padding: 20px;
+}
+
  div, .hightcharts-container {
   /* background-color: #BBCBCB; */
   border-radius: 8px 8px 8px 8px;
@@ -30,7 +35,7 @@ h3 {
   font-size: 30px;
   text-align: center;
   color: #196B7F;
-  padding: 20px;
+  padding: 40px;
 }
 
 p {
@@ -91,7 +96,6 @@ ul {
   height: 500px;
 }
 
-
 #lifestyle-menu-item {
   background-color: #196B7F;
   border-radius: 8px 8px 0px 0px;
@@ -115,7 +119,7 @@ input[type=submit] {
   border-radius: 3px;
   color: #BBCBCB;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 footer {
