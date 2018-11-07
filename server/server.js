@@ -13,10 +13,10 @@ app.use(parser.json());
 
 MongoClient.connect('mongodb://localhost:27017')
   .then((client) => {
-    const db = client.db(databaseName); //database name
-    const collectionName = db.collection(collection); //collection name
-    const collectionRouter = createRouter(collectionName); // change variable and collection name
-    app.use('/api/calculator', collectionRouter); //change link, router
+    const db = client.db("users"); //database name
+    const userCollection = db.collection("joeBloggs"); //collection name
+    const calculationRouter = createRouter(userName); // change variable and collection name
+    app.use('/api/joeBloggs', calculationRouter); //change link, router
   })
   .catch(console.err);
 
