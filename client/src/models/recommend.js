@@ -19,7 +19,7 @@ Recommendation.prototype.generate = function (category){
 
   const randomNumber = Math.floor(Math.random() * 4);
 
-  const paragraph = document.createElement('p');
+  const paragraph = document.createElement('h4');
   const quoteDiv = document.querySelector("#random-quote")
   quoteDiv.innerHTML = ""
 

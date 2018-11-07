@@ -3,6 +3,7 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+
 h1 {
   padding: 60px;
   margin: 0;
@@ -23,6 +24,13 @@ h3 {
   /* background-color: #BBCBCB; */
   border-radius: 8px 8px 8px 8px;
   /* height: 500px; */
+}
+
+#random-quote {
+  font-size: 30px;
+  text-align: center;
+  color: #196B7F;
+  padding: 20px;
 }
 
 p {
