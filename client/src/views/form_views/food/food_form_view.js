@@ -4,16 +4,6 @@ const FoodView = function (container) {
   this.container = container;
 }
 
-// FoodView.prototype.bindEvents = function () {
-//   const menuItem = document.getElementById("food-menu-item");
-//   const self = this;
-//   menuItem.addEventListener('dbclick', function _listener(event) {
-//     console.log("event.target",  event.target);
-//     self.createForm();
-//     menuItem.removeEventListener('dbclick', _listener);
-//   });
-// };
-
 FoodView.prototype.bindEvents = function () {
   const menuItem = document.querySelector("#food-menu-item");
   menuItem.addEventListener("click", (event) => {
@@ -25,56 +15,71 @@ FoodView.prototype.createForm = function () {
   const foodForm = document.createElement("form");
   foodForm.id = "food-form"
 
+  header = document.createElement("h2");
+  header.textContent = "ENTER FOOD DETAILS:"
+  foodForm.appendChild(header);
+
   // Diet
- const diet = this.createLabel("Diet");
- foodForm.appendChild(diet);
- const dietQuestion = this.createQuestion("diet")
- foodForm.appendChild(dietQuestion);
+
+  const dietDiv = document.createElement("div");
+  dietDiv.classList.add('diet-section')
+
+  const diet = this.createLabel("Diet");
+  dietDiv.appendChild(diet);
+  const dietQuestion = this.createQuestion("diet")
+  dietDiv.appendChild(dietQuestion);
 
  //vegetarian button
- const vegetarian = this.createCheckbutton("vegetarian", "diet", "50")
- const vegetarianLabel = this.createLableforButton("Vegetarian")
- foodForm.appendChild(vegetarian);
- foodForm.appendChild(vegetarianLabel);
+  const vegetarian = this.createCheckbutton("vegetarian", "diet", "50")
+  const vegetarianLabel = this.createLableforButton("Vegetarian")
+  dietDiv.appendChild(vegetarian);
+  dietDiv.appendChild(vegetarianLabel);
  //meat button
-const meat = this.createCheckbutton("meat", "diet", "0");
-const meatLabel = this.createLableforButton("Non Vegetarian")
-foodForm.appendChild(meat);
-foodForm.appendChild(meatLabel);
+  const meat = this.createCheckbutton("meat", "diet", "0");
+  const meatLabel = this.createLableforButton("Non Vegetarian")
+  dietDiv.appendChild(meat);
+  dietDiv.appendChild(meatLabel);
+  foodForm.appendChild(dietDiv);
 
 //PREPARATION
-const preparation = this.createLabel("Preparation")
-foodForm.appendChild(preparation);
-const preparationQuestion = this.preparationQuestion()
-foodForm.appendChild(preparationQuestion);
+  const prepDiv = document.createElement("div");
+  prepDiv.classList.add("prep-section");
+  const preparation = this.createLabel("Preparation")
+  prepDiv.appendChild(preparation);
+  const preparationQuestion = this.preparationQuestion()
+  prepDiv.appendChild(preparationQuestion);
 
 //homemade
-const homemade = this.createCheckbutton("homemade", "preparation", "50");
-const homemadeLabel = this.createLableforButton("Home Made")
-foodForm.appendChild(homemade);
-foodForm.appendChild(homemadeLabel);
+  const homemade = this.createCheckbutton("homemade", "preparation", "50");
+  const homemadeLabel = this.createLableforButton("Homemade")
+  prepDiv.appendChild(homemade);
+  prepDiv.appendChild(homemadeLabel);
 // take away
-const takeaway = this.createCheckbutton("takeaway", "preparation", "0");
-const takeawayLabel = this.createLableforButton("Take Away")
-foodForm.appendChild(takeaway);
-foodForm.appendChild(takeawayLabel);
+  const takeaway = this.createCheckbutton("takeaway", "preparation", "0");
+  const takeawayLabel = this.createLableforButton("Take Away")
+  prepDiv.appendChild(takeaway);
+  prepDiv.appendChild(takeawayLabel);
+  foodForm.appendChild(prepDiv);
 
 //SOURCE
-const source = this.createLabel("Source")
-foodForm.appendChild(source);
-const sourceQuestion = this.sourceQuestion()
-foodForm.appendChild(sourceQuestion);
+  const sourceDiv = document.createElement("div");
+  sourceDiv.classList.add("source-section")
+  const source = this.createLabel("Source")
+  sourceDiv.appendChild(source);
+  const sourceQuestion = this.sourceQuestion()
+  sourceDiv.appendChild(sourceQuestion);
 
 //local
-const local = this.createCheckbutton("local", "source", "50");
-const localLabel = this.createLableforButton("Local")
-foodForm.appendChild(local);
-foodForm.appendChild(localLabel);
+  const local = this.createCheckbutton("local", "source", "50");
+  const localLabel = this.createLableforButton("Local")
+  sourceDiv.appendChild(local);
+  sourceDiv.appendChild(localLabel);
 //imported
-const imported = this.createCheckbutton("imported", "source", "0");
-const importedLabel = this.createLableforButton("Imported")
-foodForm.appendChild(imported);
-foodForm.appendChild(importedLabel);
+  const imported = this.createCheckbutton("imported", "source", "0");
+  const importedLabel = this.createLableforButton("Imported")
+  sourceDiv.appendChild(imported);
+  sourceDiv.appendChild(importedLabel);
+  foodForm.appendChild(sourceDiv);
 
 //SUBMIT BUTTON!
 const submitButton = this.createSubmitButton();
@@ -92,7 +97,6 @@ foodForm.addEventListener('submit', (event) => {
   const arrays = [meat.value, vegetarian.value, local.value, imported.value,takeaway.value,homemade.value]
   // console.log(arrays);
   PubSub.publish("FoodForm:values", arrays);
-  foodForm.innerHTML = '';
 })
 
 
@@ -111,19 +115,19 @@ FoodView.prototype.createLabel = function (text, id) {
 
 FoodView.prototype.createQuestion = function (text) {
   const question = document.createElement("p");
-  question.textContent = `What describes your daily ${text}:`
+  question.textContent = `WHAT INGREDIANT WAS MAINLY USED:`
   return question
 };
 
 FoodView.prototype.preparationQuestion = function (){
   const question2 = document.createElement("p")
-  question2.textContent = "How do you mostly prepare your food:"
+  question2.textContent = "HOW WAS THE FOOD PREPARED:"
   return question2
 };
 
 FoodView.prototype.sourceQuestion = function (){
   const question = document.createElement("p")
-  question.textContent = "Where do you mostly source your food:"
+  question.textContent = "WHERE WAS THE FOOD SOURCED FROM:"
   return question
 };
 
@@ -157,7 +161,7 @@ FoodView.prototype.createCheckbutton = function (id, name, truevalue) {
 FoodView.prototype.createSubmitButton = function () {
   const button = document.createElement("input")
   button.type = "submit"
-  button.value = "save"
+  button.value = "SUBMIT"
   return button
 };
 
