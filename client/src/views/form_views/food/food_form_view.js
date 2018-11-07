@@ -24,12 +24,12 @@ FoodView.prototype.createForm = function () {
  foodForm.appendChild(dietQuestion);
 
  //vegetarian button
- const vegetarian = this.createCheckbutton("vegetarian", "diet", "50")
+ const vegetarian = this.createCheckbutton("vegetarian", "diet", "10")
  const vegetarianLabel = this.createLableforButton("Vegetarian")
  foodForm.appendChild(vegetarian);
  foodForm.appendChild(vegetarianLabel);
  //meat button
-const meat = this.createCheckbutton("meat", "diet", "0");
+const meat = this.createCheckbutton("meat", "diet", "40");
 const meatLabel = this.createLableforButton("Non Vegetarian")
 foodForm.appendChild(meat);
 foodForm.appendChild(meatLabel);
@@ -41,12 +41,12 @@ const preparationQuestion = this.preparationQuestion()
 foodForm.appendChild(preparationQuestion);
 
 //homemade
-const homemade = this.createCheckbutton("homemade", "preparation", "50");
+const homemade = this.createCheckbutton("homemade", "preparation", "10");
 const homemadeLabel = this.createLableforButton("Home Made")
 foodForm.appendChild(homemade);
 foodForm.appendChild(homemadeLabel);
 // take away
-const takeaway = this.createCheckbutton("takeaway", "preparation", "0");
+const takeaway = this.createCheckbutton("takeaway", "preparation", "40");
 const takeawayLabel = this.createLableforButton("Take Away")
 foodForm.appendChild(takeaway);
 foodForm.appendChild(takeawayLabel);
@@ -58,12 +58,12 @@ const sourceQuestion = this.sourceQuestion()
 foodForm.appendChild(sourceQuestion);
 
 //local
-const local = this.createCheckbutton("local", "source", "50");
+const local = this.createCheckbutton("local", "source", "10");
 const localLabel = this.createLableforButton("Local")
 foodForm.appendChild(local);
 foodForm.appendChild(localLabel);
 //imported
-const imported = this.createCheckbutton("imported", "source", "0");
+const imported = this.createCheckbutton("imported", "source", "40");
 const importedLabel = this.createLableforButton("Imported")
 foodForm.appendChild(imported);
 foodForm.appendChild(importedLabel);

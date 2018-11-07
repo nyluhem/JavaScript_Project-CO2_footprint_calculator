@@ -30,19 +30,19 @@ LifestyleView.prototype.createForm = function () {
   // const clothes = this.createInput("checkbox", "1", "Clothes")
 
   const tShirtLabel = this.createLabel('T-Shirt');
-  const tShirt = this.createInput('checkbox', '2', '`T-Shirt`');
+  const tShirt = this.createInput('checkbox', '10', '`T-Shirt`');
 
   const trousersLabel = this.createLabel('Trousers');
-  const trousers = this.createInput('checkbox', '4', 'Trousers');
+  const trousers = this.createInput('checkbox', '10', 'Trousers');
 
   const coatLabel = this.createLabel('Coat');
-  const coat = this.createInput('checkbox', '5', '`Coat`');
+  const coat = this.createInput('checkbox', '10', '`Coat`');
 
   const jumperLabel = this.createLabel('Jumper');
-  const jumper = this.createInput('checkbox', '3', '`Jumper`');
+  const jumper = this.createInput('checkbox', '10', '`Jumper`');
 
   const underwearLabel = this.createLabel('Underwear');
-  const underwear = this.createInput('checkbox', '1', '`Underwear`');
+  const underwear = this.createInput('checkbox', '10', '`Underwear`');
 
   const clothesDiv = document.createElement('div');
   clothesDiv.classList.add("clothes-section");
@@ -74,16 +74,16 @@ LifestyleView.prototype.createForm = function () {
   // const cosmetics = this.createInput('checkbox', '2', 'cosmetics');
 
   const deodorantLabel = this.createLabel('Deodorant');
-  const deodorant = this.createInput('checkbox', '2', '`deodorant`');
+  const deodorant = this.createInput('checkbox', '12', '`deodorant`');
 
   const beautyLabel = this.createLabel('Beauty');
-  const beauty = this.createInput('checkbox', '3', '`beauty`');
+  const beauty = this.createInput('checkbox', '12', '`beauty`');
 
   const skincareLabel = this.createLabel('Skincare');
-  const skincare = this.createInput('checkbox', '5', '`skincare`');
+  const skincare = this.createInput('checkbox', '12', '`skincare`');
 
   const toiletriesLabel = this.createLabel('Toiletries');
-  const toiletries = this.createInput('checkbox', '1', '`toiletries`');
+  const toiletries = this.createInput('checkbox', '14', '`toiletries`');
 
   const cosmeticsDiv = document.createElement('div');
   cosmeticsDiv.classList.add("cosmetics-section");
@@ -112,16 +112,16 @@ LifestyleView.prototype.createForm = function () {
   // const electronics = this.createInput('checkbox', '3', 'electronics');
 
   const largeApplianceLabel = this.createLabel('Large Appliances');
-  const largeAppliance = this.createInput('checkbox', '5', 'largeAppliance');
+  const largeAppliance = this.createInput('checkbox', '10', 'largeAppliance');
 
   const smallApplianceLabel = this.createLabel('Small Appliances');
-  const smallAppliance = this.createInput('checkbox', '2', 'smallAppliance');
+  const smallAppliance = this.createInput('checkbox', '10', 'smallAppliance');
 
   const mediaLabel = this.createLabel('Media');
-  const media = this.createInput('checkbox', '4', 'media');
+  const media = this.createInput('checkbox', '10', 'media');
 
   const personalLabel = this.createLabel('Personal Appliances');
-  const personal = this.createInput('checkbox', '3', 'personal');
+  const personal = this.createInput('checkbox', '10', 'personal');
 
 
   const electronicsDiv  = document.createElement('div');

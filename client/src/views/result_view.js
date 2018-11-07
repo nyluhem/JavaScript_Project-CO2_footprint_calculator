@@ -16,7 +16,8 @@ const ResultView = function (container) {
 ResultView.prototype.bindEvents = function () {
  const menuItem = document.querySelector("#result-menu-item");
  menuItem.addEventListener("click", (event) => {
-   this.chart();
+const detail = event.target.detail
+ PubSub.publish('PublishView:final-result', detail)
  });
 };
 
@@ -28,7 +29,7 @@ ResultView.prototype.findValues = function () {
   });
 
   PubSub.subscribe('TravelForm:display-results', (event) => {
-    this.ravel = event.detail;
+    this.travel = event.detail;
   });
 
   PubSub.subscribe('LifestyleView:result', (event) => {
@@ -42,6 +43,11 @@ ResultView.prototype.findValues = function () {
     this.chart();
     });
 };
+
+// ResultView.prototype.calculate = function(info) {
+//   const porcentage = Math.ceil((info*23)/450)
+//   return porcentage
+// }
 
 ResultView.prototype.randomize = function (food, travel, lifestyle) {
 
@@ -113,17 +119,19 @@ Highcharts.setOptions(Highcharts.theme);
         plotShadow: false,
         type: 'pie',
         backgroundColor: '#BBCBCB'
+
     },
     title: {
-        text: 'Your CO2 Footprint'
+        text: `Your CO2 Footprint!`
     },
     tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}&</b>'
     },
     plotOptions: {
        pie: {
            allowPointSelect: true,
            cursor: 'pointer',
+
            dataLabels: {
                enabled: false
            },
@@ -131,21 +139,18 @@ Highcharts.setOptions(Highcharts.theme);
        }
     },
     series: [{
-        name: 'Porcentage',
+        name: 'Percentage',
         colorByPoint: true,
         data: [{
-            name: 'Allowance',
-            y: 100,
-            // sliced: true,
-            selected: true
-        },
-         {
             name: 'Food',
             y: this.food,
             sliced: true,
+            selected: true
         },
-        {
-            name: 'Travel',
+        {  name: 'Travel',
+            y: this.travel
+        },
+        {  name: 'Travel',
             y: this.travel
         }, {
             name: 'Lifestyle',

@@ -9,6 +9,7 @@ FoodModel.prototype.getFormValues = function () {
    const foodValues = event.detail;
    const new2 = this.getValue(foodValues);
    const result = new2;
+   console.log(new2)
    PubSub.publish("FoodInfo", result);
   });
 };
