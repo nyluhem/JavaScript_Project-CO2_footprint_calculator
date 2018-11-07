@@ -2,7 +2,7 @@ const Recommendation = function (recommendations) {
   this.recommendations = [
       {
         category: "travel",
-        quotes: ["Why not walk or cycle today?", "You could car share with someone", "Run more errands in your next trip?", "Get some fresh air, take a walk today"]
+        quotes: ["Why not walk or cycle today?", "You could car share with someone", "Run more errands in your next trip", "Get some fresh air, take a walk today"]
       },
       {
         category: "food",
@@ -10,7 +10,7 @@ const Recommendation = function (recommendations) {
       },
       {
         category: "lifestyle",
-        quotes: ["Find another product that is reduced in CO2 emissions", "Donate your unused clothes to another to help keep CO2 emissions down", "If your not using it, turn it off", "Do you know where your garmet was made?"]
+        quotes: ["Find an alternative product that could reduce your C02 footprint", "Donate your unused things to another to help keep CO2 emissions down", "If you're not using it, turn it off", "Do you know where your purchase was made?"]
       }
     ];
 };
