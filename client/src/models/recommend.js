@@ -2,15 +2,15 @@ const Recommendation = function (recommendations) {
   this.recommendations = [
       {
         category: "travel",
-        quotes: ["Why not walk or cycle today?", "You could car share with someone", "Run more errands in your next trip?", "Get some fresh air, take a walk today"]
+        quotes: ["Why not walk or cycle today?", "You could car share with someone", "Run more errands in your next trip", "Get some fresh air, take a walk today"]
       },
       {
         category: "food",
-        quotes: ["Cook a homemade meal for tomorrow to reduce your CO2 footprint", "Check the label next time you buy food, look for local produce", "Try a delicious vegetarian meal this week", "Why not mix up the recipe and add more vegetables than meat"]
+        quotes: ["Cook a homemade meal for tomorrow to reduce your CO2 footprint", "Check the label next time you buy food, look for local produce", "Try a delicious vegetarian meal this week", "Make your next meal vegetarian"]
       },
       {
         category: "lifestyle",
-        quotes: ["Find another product that is reduced in CO2 emissions", "Donate your unused clothes to another to help keep CO2 emissions down", "If your not using it, turn it off", "Do you know where your garmet was made?"]
+        quotes: ["Find an alternative product that could reduce your C02 footprint", "Donate your unused things to another to help keep CO2 emissions down", "If you're not using it, turn it off", "Do you know where your purchase was made?"]
       }
     ];
 };
@@ -19,7 +19,7 @@ Recommendation.prototype.generate = function (category){
 
   const randomNumber = Math.floor(Math.random() * 4);
 
-  const paragraph = document.createElement('p');
+  const paragraph = document.createElement('h4');
   const quoteDiv = document.querySelector("#random-quote")
   quoteDiv.innerHTML = ""
 

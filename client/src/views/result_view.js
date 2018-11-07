@@ -39,6 +39,7 @@ ResultView.prototype.findValues = function () {
     this.all = event.detail;
     this.render();
     this.randomize(this.food, this.travel, this.lifestyle);
+    this.chart();
     });
 };
 
@@ -130,7 +131,7 @@ Highcharts.setOptions(Highcharts.theme);
        }
     },
     series: [{
-        name: 'Porcentage',
+        name: 'Percentage',
         colorByPoint: true,
         data: [{
             name: 'Allowance',

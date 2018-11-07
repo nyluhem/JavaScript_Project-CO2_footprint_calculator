@@ -13,9 +13,13 @@ const Highcharts = require('highcharts');
 
 document.addEventListener("DOMContentLoaded", () => {
 
+<<<<<<< HEAD
 
 
   const formContainer = document.querySelector("#forms-window")
+=======
+  const formContainer = document.querySelector("#forms-window");
+>>>>>>> develop
   const newFormTravel = new TravelForm(formContainer);
   newFormTravel.bindEvents();
   newFormTravel.getResults();

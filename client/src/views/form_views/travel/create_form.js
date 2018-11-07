@@ -170,7 +170,7 @@ CreateTravelForm.prototype.createSubmitButton = function () {
   const submitButton = document.createElement("input");
   submitButton.classList.add("submit");
   submitButton.type = "submit"
-  submitButton.value = "Submit Travel Details"
+  submitButton.value = "SUBMIT"
 
   return submitButton;
 };
