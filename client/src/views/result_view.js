@@ -39,6 +39,7 @@ ResultView.prototype.findValues = function () {
     this.all = event.detail;
     this.render();
     this.randomize(this.food, this.travel, this.lifestyle);
+    this.chart();
     });
 };
 
