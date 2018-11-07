@@ -4,15 +4,15 @@ const FoodView = function (container) {
   this.container = container;
 }
 
-// FoodView.prototype.bindEvents = function () {
-//   const menuItem = document.getElementById("food-menu-item");
-//   const self = this;
-//   menuItem.addEventListener('dbclick', function _listener(event) {
-//     console.log("event.target",  event.target);
-//     self.createForm();
-//     menuItem.removeEventListener('dbclick', _listener);
-//   });
-// };
+FoodView.prototype.bindEvents = function () {
+  const menuItem = document.getElementById("food-menu-item");
+  const self = this;
+  menuItem.addEventListener('dbclick', function _listener(event) {
+    console.log("event.target",  event.target);
+    self.createForm();
+    menuItem.removeEventListener('click', _listener);
+  });
+};
 
 FoodView.prototype.bindEvents = function () {
   const menuItem = document.querySelector("#food-menu-item");
@@ -92,14 +92,14 @@ foodForm.addEventListener('submit', (event) => {
   const arrays = [meat.value, vegetarian.value, local.value, imported.value,takeaway.value,homemade.value]
   // console.log(arrays);
   PubSub.publish("FoodForm:values", arrays);
-  foodForm.innerHTML = '';
+
 })
 
 
 
 
   //create
-  this.container.innerHTML = "";
+  // this.container.innerHTML = "";
   const newForm = this.container.appendChild(foodForm);
 };
 

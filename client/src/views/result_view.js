@@ -10,19 +10,14 @@ const ResultView = function () {
 
 
 
-//
-// ResultView.prototype.bindEvents = function () {
-//   PubSub.subscribe('CO2Checker:result-calculated', (event) => {
-//     const result = event.detail;
-//     this.displayResult(result);
-//   });
-// };
+
 
 ResultView.prototype.render = function (data) {
   this.container.innerHTML = " ";
   const resultView = document.createElement('p');
   resultView.textContent  = data.result;
   this.container.appendChild(resultView);
+  ch
 };
 
 // ResultView.prototype.displayResult = function (result) {
@@ -58,48 +53,34 @@ ResultView.prototype.render = function (data) {
 // “Try a delicious vegetarian meal this week”
 // “Why not mix up the recipe and add more vegetables than meat”
 
-Highcharts.chart('container', {
-    chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
-    },
-    title: {
-        text: 'CO2 results'
-    },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                style: {
-                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                }
-            }
-        }
-    },
-    series: [{
-        name: 'CO2 calculator',
-        colorByPoint: true,
-        data: [{
-            name: 'Food',
-            y: 61.41,
-            sliced: true,
-            selected: true
-        }, {
-            name: 'Travel',
-            y: 11.84
-        }, {
-            name: 'Lifestyle',
-            y: 10.85
-        }]
-    }]
-});
+
+
+// const chart = function () {
+//   const myChart = document.querySelector("#container")
+//   const theChart = Highcharts.chart( myChart, {
+//       chart: {
+//           type: 'bar'
+//       },
+//       title: {
+//           text: 'Fruit Consumption'
+//       },
+//       xAxis: {
+//           categories: ['Apples', 'Bananas', 'Oranges']
+//       },
+//       yAxis: {
+//           title: {
+//               text: 'Fruit eaten'
+//           }
+//       },
+//       series: [{
+//           name: 'Jane',
+//           data: [1, 0, 4]
+//       }, {
+//           name: 'John',
+//           data: [5, 7, 3]
+//       }]
+//   });
+// };
+// chart();
 
 module.exports = ResultView;
