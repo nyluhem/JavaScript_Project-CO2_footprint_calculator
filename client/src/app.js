@@ -33,9 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const foodValues = new FoodModel();
   foodValues.getFormValues();
 
-  // const resultView = document.querySelector('#forms-window');
-  // new resultForm = new ResultView(resultView);
-  // resultForm.bindEvents();
+  const resultView = document.querySelector('#forms-window');
+  const resultForm = new ResultView(container);
+  resultForm.bindEvents();
 
   const total = new TotalCalculator();
   total.bindEvents();

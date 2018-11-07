@@ -196,7 +196,7 @@ CreateTravelForm.prototype.createSubmitButton = function () {
       const form = event.target;
       const answerArray = this.getValues();
       PubSub.publish("TravelModel:send-values-array", answerArray);
-      form.reset();
+      // form.reset();
     });
   };
 

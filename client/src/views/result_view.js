@@ -1,28 +1,62 @@
 const PubSub = require('../helpers/pub_sub.js');
 const Highcharts = require('highcharts');
-// require('highcharts/modules/exporting')(Highcharts);
+require('highcharts/modules/exporting')(Highcharts);
+const TotalCalculator = require("../models/total.js")
 
 const ResultView = function (container) {
   this.container = container;
+  this.travel = null;
+  this.food = null;
+  this.lifestyle = null;
+  this.all = null;
 };
 
 ResultView.prototype.bindEvents = function () {
-  PubSub.subscribe('PublishView:final-result', (event) => {
-    const result = event.detail;
-    console.log(result);
+
+  PubSub.subscribe('FoodInfo', (event) => {
+      this.food = event.detail;
   });
+
+  PubSub.subscribe('TravelForm:display-results', (event) => {
+    this.travel = event.detail;
+  });
+
+  PubSub.subscribe('LifestyleView:result', (event) => {
+    this.lifestyle = event.detail;
+  });
+
+  PubSub.subscribe('PublishView:final-result', (event) => {
+    this.all = event.detail;
+    this.render();
+    // const button = document.querySelector('#clicky-button')
+    // button.addEventListener('click', () => {
+    //   this.render();
+    // });
+
+    });
+
 };
 
-// subscribe to PublishView:final-result
-// subscribe to FoodInfo
-// subscribe to LifestyleView:result
-// subscribe to TravelForm:display-results
-
-ResultView.prototype.render = function (data) {
+ResultView.prototype.render = function () {
   this.container.innerHTML = "";
-  const resultView = document.createElement('p');
-  resultView.textContent = data.result;
-  this.container.appendChild(resultView);
+
+  const foodParagraph = document.createElement('p');
+  foodParagraph.textContent = `Food: ${this.food}`;
+
+  const travelParagraph = document.createElement('p');
+  travelParagraph.textContent = `Travel: ${this.travel}`;
+
+  const lifestyleParagraph = document.createElement('p');
+  lifestyleParagraph.textContent = `Lifestyle: ${this.lifestyle}`;
+
+  const allParagraph = document.createElement('p');
+  console.log('this.all in render', this.all);
+  allParagraph.textContent = `Total: ${this.all}`;
+
+  this.container.appendChild(foodParagraph);
+  this.container.appendChild(travelParagraph);
+  this.container.appendChild(lifestyleParagraph);
+  this.container.appendChild(allParagraph);
 };
 
 // Highcharts.chart('container', {
