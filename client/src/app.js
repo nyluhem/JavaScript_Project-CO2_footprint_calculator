@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const travelCalculator = new TravelCalculator();
   travelCalculator.bindEvents();
 
+
   const container = document.querySelector('#forms-window');
   const lifestyleForm = new LifestyleView(container);
   lifestyleForm.bindEvents();

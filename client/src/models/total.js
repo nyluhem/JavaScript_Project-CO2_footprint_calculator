@@ -40,4 +40,4 @@ const TotalCalculator = function () {
   return result;
   };
 
-module.exports = TotalCalculator;
+module.exports = Total;
