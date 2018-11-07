@@ -16,7 +16,7 @@ const ResultView = function (container) {
 ResultView.prototype.bindEvents = function () {
  const menuItem = document.querySelector("#result-menu-item");
  menuItem.addEventListener("click", (event) => {
-this.chart();
+   this.chart();
  });
 };
 
@@ -39,8 +39,6 @@ ResultView.prototype.findValues = function () {
     this.all = event.detail;
     this.render();
     this.randomize(this.food, this.travel, this.lifestyle);
-
-
     });
 };
 
@@ -55,10 +53,10 @@ ResultView.prototype.randomize = function (food, travel, lifestyle) {
   } else if (maxNumber === lifestyle) {
     randomQuote.generate("lifestyle");
   } else {
-    randomQuote.generate("lifestyle")
+    randomQuote.generate("lifestyle");
   }
 
-  return randomQuote
+  return randomQuote;
 };
 
 ResultView.prototype.render = function () {
@@ -76,16 +74,11 @@ ResultView.prototype.render = function () {
    const allParagraph = document.createElement('p');
    allParagraph.textContent = `Total: ${this.all}`;
 
-   this.container.appendChild(foodParagraph)
-   this.container.appendChild(travelParagraph)
-   this.container.appendChild(lifestyleParagraph)
+   this.container.appendChild(foodParagraph);
+   this.container.appendChild(travelParagraph);
+   this.container.appendChild(lifestyleParagraph);
    this.container.appendChild(allParagraph);
-}
-
-
-
-
-
+};
 
 ResultView.prototype.chart = function () {
 
@@ -98,19 +91,17 @@ Highcharts.theme = {
               textTransform: 'uppercase',
               marginTop: 70
           }
-},
-legend: {
+        },
+  legend: {
         itemStyle: {
             color: 'white',
             font: "'Raleway', sans-serif",
             textTransform: 'uppercase'
         }
-}
+      }
 };
 
 Highcharts.setOptions(Highcharts.theme);
-
-
 
   const myChart = document.createElement("form")
   myChart.id = "result-view"
@@ -161,12 +152,9 @@ Highcharts.setOptions(Highcharts.theme);
         }]
     }]
 });
+
 this.container.innerHTML = "";
 const result = this.container.appendChild(myChart)
 }
-
-
-
-};
 
 module.exports = ResultView;

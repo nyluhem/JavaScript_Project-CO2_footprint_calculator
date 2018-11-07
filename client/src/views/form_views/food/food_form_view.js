@@ -76,11 +76,7 @@ foodForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const arrays = [meat.value, vegetarian.value, local.value, imported.value,takeaway.value,homemade.value];
   PubSub.publish("FoodForm:values", arrays);
-<<<<<<< HEAD
 });
-=======
-})
->>>>>>> develop
 
   //create
   const newForm = this.container.appendChild(foodForm);
@@ -141,11 +137,5 @@ FoodView.prototype.createSubmitButton = function () {
   button.value = "save"
   return button
 };
-
-// FoodView.prototype.createEventListener = function () {
-//   const
-//
-// };
-
 
 module.exports = FoodView;
