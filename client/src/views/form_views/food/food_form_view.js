@@ -17,6 +17,10 @@ FoodView.prototype.createForm = function () {
   const foodForm = document.createElement("form");
   foodForm.id = "food-form";
 
+  header = document.createElement("h2");
+  header.textContent = "ENTER FOOD DETAILS:"
+  foodForm.appendChild(header);
+
   // Diet
  const diet = this.createLabel("Diet");
  foodForm.appendChild(diet);
@@ -134,7 +138,7 @@ FoodView.prototype.createCheckbutton = function (id, name, truevalue) {
 FoodView.prototype.createSubmitButton = function () {
   const button = document.createElement("input")
   button.type = "submit"
-  button.value = "save"
+  button.value = "SUBMIT"
   return button
 };
 
