@@ -6,17 +6,17 @@ const CreateTravelForm = function(container) {
 
 CreateTravelForm.prototype.getResults = function () {
   PubSub.subscribe("TravelForm:display-results", (evt) => {
-    const totalPoints = evt.detail
-    const results = this.displayResults(totalPoints)
-    return results
+    const totalPoints = evt.detail;
+    const results = this.displayResults(totalPoints);
+    return results;
   });
 };
 
 CreateTravelForm.prototype.displayResults = function (value) {
   const points = document.createElement("h1");
-  points.innerHTML = ""
-  points.textContent = `${value}`
-  return points
+  points.innerHTML = "";
+  points.textContent = `${value}`;
+  return points;
 };
 
 CreateTravelForm.prototype.bindEvents = function () {
@@ -31,13 +31,12 @@ CreateTravelForm.prototype.createForm = function () {
   this.container.innerHTML = ""
 
   const travelForm = document.createElement("form");
-  console.log("created travel-form", travelForm);
 
   travelForm.classList.add('travel-form');
   travelForm.id = ("travel-form");
 
   header = document.createElement("h2");
-  header.textContent = "Enter travel details:"
+
   travelForm.appendChild(header);
 
   const carQuestion = this.createCarQuestion();
@@ -55,7 +54,6 @@ CreateTravelForm.prototype.createForm = function () {
   this.handleSubmit(travelForm);
 
   const newForm = this.container.appendChild(travelForm)
-  console.log(newForm)
   return newForm;
 };
 
@@ -63,8 +61,8 @@ CreateTravelForm.prototype.createCarQuestion = function () {
   const carDiv = document.createElement("div");
   carDiv.classList.add("car-section");
 
-  const carHeader = document.createElement("legend");
-  carHeader.textContent = "Car/Motorbike";
+  const carHeader = document.createElement("p");
+  carHeader.textContent = "PERSONAL MOTOR";
   carDiv.appendChild(carHeader)
 
   const carQuestion = document.createElement("p");
@@ -95,16 +93,15 @@ CreateTravelForm.prototype.createCarQuestion = function () {
   carDiv.appendChild(carOptionFour)
   carDiv.appendChild(labelCarOptionFour)
 
-  return carDiv
-  console.log(carDiv)
+  return carDiv;
 };
 
 CreateTravelForm.prototype.createPublicTransportQuestion = function () {
   const busDiv = document.createElement("div");
   busDiv.classList.add("bus-section");
 
-  const busHeader = document.createElement("legend");
-  busHeader.textContent = "Public Transport";
+  const busHeader = document.createElement("p");
+  busHeader.textContent = "PUBLIC TRANSPORT";
   busDiv.appendChild(busHeader)
 
   const busQuestion = document.createElement("p");
@@ -142,8 +139,8 @@ CreateTravelForm.prototype.createNonFootprintQuestion = function () {
   const bikeDiv = document.createElement("div");
   bikeDiv.classList.add("bike-section");
 
-  const bikeHeader = document.createElement("legend");
-  bikeHeader.textContent = "Cycling/Walking";
+  const bikeHeader = document.createElement("p");
+  bikeHeader.textContent = "CYCLE / WALK";
   bikeDiv.appendChild(bikeHeader)
 
   const bikeQuestion = document.createElement("p");
@@ -170,13 +167,14 @@ CreateTravelForm.prototype.createSubmitButton = function () {
   const submitButton = document.createElement("input");
   submitButton.classList.add("submit");
   submitButton.type = "submit"
-  submitButton.value = "Submit Travel Details"
+  submitButton.value = "SUBMIT"
 
   return submitButton;
 };
 
   CreateTravelForm.prototype.createRadioButton = function (name, value, id) {
     const detail = document.createElement("input");
+    detail.classList.add('checkmark')
     detail.type = "radio"
     detail.name = `${name}`
     detail.value = `${value}`
@@ -187,10 +185,10 @@ CreateTravelForm.prototype.createSubmitButton = function () {
 
   CreateTravelForm.prototype.createLabel = function (textContent, id) {
     const detail = document.createElement("label");
-    detail.textContent = `${textContent}`
-    detail.id = `${id}`
+    detail.textContent = `${textContent}`;
+    detail.id = `${id}`;
 
-    return detail
+    return detail;
   };
 
   CreateTravelForm.prototype.handleSubmit = function (formInput) {
@@ -198,9 +196,8 @@ CreateTravelForm.prototype.createSubmitButton = function () {
       event.preventDefault();
       const form = event.target;
       const answerArray = this.getValues();
-      console.log(answerArray)
       PubSub.publish("TravelModel:send-values-array", answerArray);
-      form.reset()
+      // form.reset();
     });
   };
 

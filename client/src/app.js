@@ -4,8 +4,9 @@ const LifestyleView = require('./views/form_views/lifestyle_form_view.js');
 const LifestyleModel = require('./models/lifestyle.js');
 const FoodView = require('./views/form_views/food/food_form_view.js');
 const FoodModel = require('./models/food.js');
-const FoodFinalView = require('./views/form_views/food/food_final_view.js');
-const Total = require('./models/total.js');
+const ResultView = require('./views/result_view.js');
+// const FoodFinalView = require('./views/form_views/food/food_final_view.js');
+const TotalCalculator = require('./models/total.js');
 const PubSub = require('./helpers/pub_sub.js');
 const TotalCalculatorPublish = require('./views/form_views/final_view.js')
 const Highcharts = require('highcharts');
@@ -28,28 +29,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const lifestyleValues = new LifestyleModel();
   lifestyleValues.getValues();
 
-  const form = document.querySelector('#forms-window')
+  const form = document.querySelector('#forms-window');
   const newForm = new FoodView(form);
-  const food = newForm.bindEvents();
-  console.log(food);
+  newForm.bindEvents();
 
-
-  const foodValues = new FoodModel()
-  console.log(foodValues);
+  const foodValues = new FoodModel();
   foodValues.getFormValues();
 
-  // const infoFood = document.querySelector("div#food-forms-window")
-  // const infoFoodInfo = new FoodFinalView(infoFood);
-  // infoFoodInfo.foodCarbon();
+  const resultView = document.querySelector('#forms-window');
+  const resultForm = new ResultView(container);
+  resultForm.bindEvents();
+  resultForm.findValues();
 
-  const total = new Total();
+  const total = new TotalCalculator();
   total.bindEvents();
-
-
-
-
 });
-
-  // const gridContainer = document.querySelector('div#results');
-  // const gridView = new GridView(gridcontainer);
-  // gridView.bindEvents();

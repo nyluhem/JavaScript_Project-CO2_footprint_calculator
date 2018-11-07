@@ -30,7 +30,7 @@ TotalCalculator.prototype.bindEvents = function () {
 
     button.addEventListener('click', () => {
     const result = this.calculateTotal();
-    this.chart()
+    // this.chart()
     console.log(result);
     PubSub.publish("PublishView:final-result", result);
     // need to subscribe to this in results view
@@ -46,81 +46,7 @@ TotalCalculator.prototype.calculateTotal = function () {
   return result;
 };
 
-TotalCalculator.prototype.chart = function () {
 
-Highcharts.theme = {
-  colors: ['#CD5C5C', '#20B2AA', '#3CB371', '#4682B4'],
-  title: {
-          style: {
-              color: '#000',
-              font: '16px "Helvetica"',
-              textTransform: 'uppercase'
-          }
-},
-legend: {
-        itemStyle: {
-            color: '#000',
-            font: '"Helvetica"',
-            textTransform: 'uppercase'
-        }
-}
-};
-
-Highcharts.setOptions(Highcharts.theme);
-
-
-
-  const myChart = document.createElement("div")
-  myChart.id = "chart-section"
-  const theChart = Highcharts.chart(myChart, {
-    chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
-    },
-    title: {
-        text: 'Your CO2 Footprint'
-    },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    plotOptions: {
-       pie: {
-           allowPointSelect: true,
-           cursor: 'pointer',
-           dataLabels: {
-               enabled: false
-           },
-           showInLegend: true
-       }
-    },
-    series: [{
-        name: 'Porcentage',
-        colorByPoint: true,
-        data: [{
-            name: 'Allowance',
-            y: 100,
-            // sliced: true,
-            selected: true
-        },
-         {
-            name: 'Food',
-            y: this.values.food,
-            sliced: true,
-        },
-        {
-            name: 'Travel',
-            y: this.values.travel
-        }, {
-            name: 'Lifestyle',
-            y: this.values.lifestyle
-        }]
-    }]
-});
-const result = document.querySelector("#result-menu-item")
-result.appendChild(myChart)
-}
 // chart();
 
 
