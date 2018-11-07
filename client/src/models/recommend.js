@@ -6,7 +6,7 @@ const Recommendation = function (recommendations) {
       },
       {
         category: "food",
-        quotes: ["Cook a homemade meal for tomorrow to reduce your CO2 footprint", "Check the label next time you buy food, look for local produce", "Try a delicious vegetarian meal this week", "Why not mix up the recipe and add more vegetables than meat"]
+        quotes: ["Cook a homemade meal for tomorrow to reduce your CO2 footprint", "Check the label next time you buy food, look for local produce", "Try a delicious vegetarian meal this week", "Make your next meal vegetarian"]
       },
       {
         category: "lifestyle",

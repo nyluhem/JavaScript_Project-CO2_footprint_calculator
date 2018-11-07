@@ -130,7 +130,7 @@ Highcharts.setOptions(Highcharts.theme);
        }
     },
     series: [{
-        name: 'Porcentage',
+        name: 'Percentage',
         colorByPoint: true,
         data: [{
             name: 'Allowance',
