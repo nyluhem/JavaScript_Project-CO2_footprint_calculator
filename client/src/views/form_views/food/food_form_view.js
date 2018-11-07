@@ -7,13 +7,15 @@ const FoodView = function (container) {
 FoodView.prototype.bindEvents = function () {
   const menuItem = document.querySelector("#food-menu-item");
   menuItem.addEventListener("click", (event) => {
-    this.createForm()
+    this.createForm();
   });
 };
 
 FoodView.prototype.createForm = function () {
+  event.preventDefault();
+  this.container.innerHTML = "";
   const foodForm = document.createElement("form");
-  foodForm.id = "food-form"
+  foodForm.id = "food-form";
 
   header = document.createElement("h2");
   header.textContent = "ENTER FOOD DETAILS:"
@@ -83,27 +85,22 @@ FoodView.prototype.createForm = function () {
 
 //SUBMIT BUTTON!
 const submitButton = this.createSubmitButton();
-// submitButton.addEventListener("submit", (event) =>{
-//   event.preventDefault();
-//   console.log(event);
-//   const submittInformation = event.target;
-//   PubSub.publish("FoodForm:Inputted/Information", submittInformation)
-//   console.log(submittInformation)
-// })
 foodForm.appendChild(submitButton);
 
 foodForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  const arrays = [meat.value, vegetarian.value, local.value, imported.value,takeaway.value,homemade.value]
-  // console.log(arrays);
+  const arrays = [meat.value, vegetarian.value, local.value, imported.value,takeaway.value,homemade.value];
   PubSub.publish("FoodForm:values", arrays);
+<<<<<<< HEAD
 })
 
 
 
+=======
+});
+>>>>>>> develop
 
   //create
-  this.container.innerHTML = "";
   const newForm = this.container.appendChild(foodForm);
 };
 
@@ -131,17 +128,15 @@ FoodView.prototype.sourceQuestion = function (){
   return question
 };
 
-
 FoodView.prototype.createLableforButton = function (id) {
   const lable = document.createElement("lable");
   lable.id = id;
-  lable.textContent = `${id}`
+  lable.textContent = `${id}`;
   return lable;
-
 };
 
 FoodView.prototype.createCheckbutton = function (id, name, truevalue) {
-  var button = document.createElement("input")
+  var button = document.createElement("input");
   button.type = "radio";
   button.id = id;
   button.name = name;

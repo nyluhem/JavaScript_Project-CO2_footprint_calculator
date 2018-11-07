@@ -1,38 +1,57 @@
 const PubSub = require('../helpers/pub_sub.js');
 const Highcharts = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
+const TotalCalculator = require("../models/total.js")
 
-const ResultView = function () {
+const ResultView = function (container) {
   this.container = container;
+  this.travel = null;
+  this.food = null;
+  this.lifestyle = null;
+  this.all = null;
 };
 
-  ResultView.prototype.bindEvents()
+ResultView.prototype.bindEvents = function () {
 
+  PubSub.subscribe('FoodInfo', (event) => {
+      this.food = event.detail;
+  });
 
+  PubSub.subscribe('TravelForm:display-results', (event) => {
+    this.travel = event.detail;
+  });
 
-//
-// ResultView.prototype.bindEvents = function () {
-//   PubSub.subscribe('CO2Checker:result-calculated', (event) => {
-//     const result = event.detail;
-//     this.displayResult(result);
-//   });
-// };
+  PubSub.subscribe('LifestyleView:result', (event) => {
+    this.lifestyle = event.detail;
+  });
 
-ResultView.prototype.render = function (data) {
-  this.container.innerHTML = " ";
-  const resultView = document.createElement('p');
-  resultView.textContent  = data.result;
-  this.container.appendChild(resultView);
+  PubSub.subscribe('PublishView:final-result', (event) => {
+    this.all = event.detail;
+    this.render();
+    });
 };
 
-// ResultView.prototype.displayResult = function (result) {
-//   const resultElement = document.querySelector('#result');
-//   if (result) {
-//     resultElement.textContent = "Your carbon footprint is lower than expected!";
-//   } else {
-//     resultElement.textContent = "You are a little high on your carbon footprint";
-//   }
-// };
+ResultView.prototype.render = function () {
+  this.container.innerHTML = "";
+
+  const foodParagraph = document.createElement('p');
+  foodParagraph.textContent = `Food: ${this.food}`;
+
+  const travelParagraph = document.createElement('p');
+  travelParagraph.textContent = `Travel: ${this.travel}`;
+
+  const lifestyleParagraph = document.createElement('p');
+  lifestyleParagraph.textContent = `Lifestyle: ${this.lifestyle}`;
+
+  const allParagraph = document.createElement('p');
+  allParagraph.textContent = `Total: ${this.all}`;
+
+  this.container.appendChild(foodParagraph)
+  this.container.appendChild(travelParagraph)
+  this.container.appendChild(lifestyleParagraph)
+  this.container.appendChild(allParagraph);
+};
+
 
 // random messages need to be added here for results
 //
@@ -58,48 +77,5 @@ ResultView.prototype.render = function (data) {
 // “Try a delicious vegetarian meal this week”
 // “Why not mix up the recipe and add more vegetables than meat”
 
-Highcharts.chart('container', {
-    chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
-    },
-    title: {
-        text: 'CO2 results'
-    },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                style: {
-                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                }
-            }
-        }
-    },
-    series: [{
-        name: 'CO2 calculator',
-        colorByPoint: true,
-        data: [{
-            name: 'Food',
-            y: 61.41,
-            sliced: true,
-            selected: true
-        }, {
-            name: 'Travel',
-            y: 11.84
-        }, {
-            name: 'Lifestyle',
-            y: 10.85
-        }]
-    }]
-});
 
 module.exports = ResultView;

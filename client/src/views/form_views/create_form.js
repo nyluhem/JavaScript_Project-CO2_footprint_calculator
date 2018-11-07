@@ -6,17 +6,17 @@ const CreateTravelForm = function(container) {
 
 CreateTravelForm.prototype.getResults = function () {
   PubSub.subscribe("TravelForm:display-results", (evt) => {
-    const totalPoints = evt.detail
-    const results = this.displayResults(totalPoints)
-    return results
+    const totalPoints = evt.detail;
+    const results = this.displayResults(totalPoints);
+    return results;
   });
 };
 
 CreateTravelForm.prototype.displayResults = function (value) {
   const points = document.createElement("h1");
-  points.innerHTML = ""
-  points.textContent = `${value}`
-  return points
+  points.innerHTML = "";
+  points.textContent = `${value}`;
+  return points;
 };
 
 CreateTravelForm.prototype.bindEvents = function () {
@@ -31,13 +31,16 @@ CreateTravelForm.prototype.createForm = function () {
   this.container.innerHTML = ""
 
   const travelForm = document.createElement("form");
-  console.log("created travel-form", travelForm);
 
   travelForm.classList.add('travel-form');
   travelForm.id = ("travel-form");
 
   header = document.createElement("h2");
+<<<<<<< HEAD
   header.textContent = "ENTER TRAVEL DETAILS:"
+=======
+  header.textContent = "Please enter travel details:"
+>>>>>>> develop
   travelForm.appendChild(header);
 
   const carQuestion = this.createCarQuestion();
@@ -55,7 +58,6 @@ CreateTravelForm.prototype.createForm = function () {
   this.handleSubmit(travelForm);
 
   const newForm = this.container.appendChild(travelForm)
-  console.log(newForm)
   return newForm;
 };
 
@@ -95,8 +97,7 @@ CreateTravelForm.prototype.createCarQuestion = function () {
   carDiv.appendChild(carOptionFour)
   carDiv.appendChild(labelCarOptionFour)
 
-  return carDiv
-  console.log(carDiv)
+  return carDiv;
 };
 
 CreateTravelForm.prototype.createPublicTransportQuestion = function () {
@@ -188,10 +189,10 @@ CreateTravelForm.prototype.createSubmitButton = function () {
 
   CreateTravelForm.prototype.createLabel = function (textContent, id) {
     const detail = document.createElement("label");
-    detail.textContent = `${textContent}`
-    detail.id = `${id}`
+    detail.textContent = `${textContent}`;
+    detail.id = `${id}`;
 
-    return detail
+    return detail;
   };
 
   CreateTravelForm.prototype.handleSubmit = function (formInput) {
@@ -199,9 +200,8 @@ CreateTravelForm.prototype.createSubmitButton = function () {
       event.preventDefault();
       const form = event.target;
       const answerArray = this.getValues();
-      console.log(answerArray)
       PubSub.publish("TravelModel:send-values-array", answerArray);
-      form.reset()
+      // form.reset();
     });
   };
 
