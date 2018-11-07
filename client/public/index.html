@@ -5,6 +5,7 @@
     <title>CO2 Footprint Calculator</title>
     <link rel="stylesheet" type= "text/css" href="css/main.css">
     <script src="./js/bundle.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
   </head>
 
   <body>
@@ -18,6 +19,7 @@
 
 </div>
     <section>
+      <hr>
       <nav id="submenu">
         <ul>
           <li class="column" id="travel-menu-item">TRAVEL</li>
@@ -26,22 +28,14 @@
           <li class="column" id="result-menu-item">RESULT</li>
         </ul>
         <input type="submit" id="clicky-button" value="Calculate">
-        <script>
-        function openTab(tabName) {
-          var i, x;
-          x = document.getElementsByClassName("containerTab");
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-          }
-          document.getElementById(tabName).style.display = "block";
-        }
-        </script>
 
-      <div id="forms-window"></div>
+      <section id="forms-window"></section>
   </body>
-
   </section>
+  <hr>
+    <p>HISTORY</p>
+  <hr>
   <footer>
-    <p>CO2 FOOTPRINT NAME &copy</p>
+    <p>Protecting our future planet &copy</p>
   </footer>
 </html>

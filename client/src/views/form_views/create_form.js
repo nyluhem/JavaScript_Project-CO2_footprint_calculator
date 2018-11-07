@@ -36,7 +36,11 @@ CreateTravelForm.prototype.createForm = function () {
   travelForm.id = ("travel-form");
 
   header = document.createElement("h2");
+<<<<<<< HEAD
+  header.textContent = "ENTER TRAVEL DETAILS:"
+=======
   header.textContent = "Please enter travel details:"
+>>>>>>> develop
   travelForm.appendChild(header);
 
   const carQuestion = this.createCarQuestion();
@@ -61,8 +65,8 @@ CreateTravelForm.prototype.createCarQuestion = function () {
   const carDiv = document.createElement("div");
   carDiv.classList.add("car-section");
 
-  const carHeader = document.createElement("legend");
-  carHeader.textContent = "Car/Motorbike";
+  const carHeader = document.createElement("p");
+  carHeader.textContent = "PERSONAL MOTOR";
   carDiv.appendChild(carHeader)
 
   const carQuestion = document.createElement("p");
@@ -100,8 +104,8 @@ CreateTravelForm.prototype.createPublicTransportQuestion = function () {
   const busDiv = document.createElement("div");
   busDiv.classList.add("bus-section");
 
-  const busHeader = document.createElement("legend");
-  busHeader.textContent = "Public Transport";
+  const busHeader = document.createElement("p");
+  busHeader.textContent = "PUBLIC TRANSPORT";
   busDiv.appendChild(busHeader)
 
   const busQuestion = document.createElement("p");
@@ -139,8 +143,8 @@ CreateTravelForm.prototype.createNonFootprintQuestion = function () {
   const bikeDiv = document.createElement("div");
   bikeDiv.classList.add("bike-section");
 
-  const bikeHeader = document.createElement("legend");
-  bikeHeader.textContent = "Cycling/Walking";
+  const bikeHeader = document.createElement("p");
+  bikeHeader.textContent = "CYCLE / WALK";
   bikeDiv.appendChild(bikeHeader)
 
   const bikeQuestion = document.createElement("p");
@@ -167,13 +171,14 @@ CreateTravelForm.prototype.createSubmitButton = function () {
   const submitButton = document.createElement("input");
   submitButton.classList.add("submit");
   submitButton.type = "submit"
-  submitButton.value = "Submit Travel Details"
+  submitButton.value = "SUBMIT"
 
   return submitButton;
 };
 
   CreateTravelForm.prototype.createRadioButton = function (name, value, id) {
     const detail = document.createElement("input");
+    detail.classList.add('checkmark')
     detail.type = "radio"
     detail.name = `${name}`
     detail.value = `${value}`
