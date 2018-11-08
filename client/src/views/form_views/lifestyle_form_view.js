@@ -11,6 +11,11 @@ LifestyleView.prototype.bindEvents = function () {
   });
 };
 
+
+
+
+
+
 LifestyleView.prototype.createForm = function () {
   event.preventDefault();
   this.container.innerHTML = '';
@@ -168,6 +173,13 @@ LifestyleView.prototype.createForm = function () {
     console.log(arrayOfValues)
     PubSub.publish('LifestyleView:values', arrayOfValues);
   });
+
+  const submitButton = document.createElement("input")
+  submitButton.type = "submit";
+  submitButton.value = "Calculate Results";
+  submitButton.id = "clicky-button";
+  this.container.appendChild(lifestyleForm)
+
 
   this.container.appendChild(lifestyleForm);
 };
