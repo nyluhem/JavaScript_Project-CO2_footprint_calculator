@@ -75,42 +75,46 @@ ul {
 #travel-menu-item {
   background-color: #1C708E;
   border-radius: 8px 8px 0px 0px;
+  padding-bottom: 2px;
 }
 
 #travel-form {
   background-color: #1C708E;
   padding: 20px;
   border-radius: 8px 8px 8px 8px;
-  height: 500px;
+  height: 350px;
 }
 
 #food-menu-item {
   background-color: #4797AD;
   border-radius: 8px 8px 0px 0px;
+  padding-bottom: 2px;
 }
 
 #food-form {
   background-color: #4797AD;
   padding: 20px;
   border-radius: 8px 8px 8px 8px;
-  height: 500px;
+  height: 350px;
 }
 
 #lifestyle-menu-item {
   background-color: #196B7F;
   border-radius: 8px 8px 0px 0px;
+  padding-bottom: 2px;
 }
 
 #lifestyle-form {
   background-color: #196B7F;
   padding: 20px;
   border-radius: 8px 8px 8px 8px;
-  height: 500px;
+  height: 350px;
 }
 
 #result-menu-item {
   background-color: #BBCBCB;
   border-radius: 8px 8px 0px 0px;
+  padding-bottom: 2px;
 }
 
 input[type=submit] {

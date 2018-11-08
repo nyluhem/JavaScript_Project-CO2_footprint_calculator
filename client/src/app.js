@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const formContainer = document.querySelector("#forms-window");
   const newFormTravel = new TravelForm(formContainer);
+  newFormTravel.createForm();
   newFormTravel.bindEvents();
   newFormTravel.getResults();
 
