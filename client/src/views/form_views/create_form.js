@@ -120,19 +120,19 @@ CreateTravelForm.prototype.createPublicTransportQuestion = function () {
   busDiv.appendChild(busOptionOne)
   busDiv.appendChild(labelBusOptionOne)
 
-  const busOptionTwo = this.createRadioButton("bus-miles", "5", "bus-option-two");
+  const busOptionTwo = this.createRadioButton("bus-miles", "10", "bus-option-two");
   const labelBusOptionTwo = this.createLabel("1-10", "bus-option-two");
 
   busDiv.appendChild(busOptionTwo)
   busDiv.appendChild(labelBusOptionTwo)
 
-  const busOptionThree = this.createRadioButton("bus-miles", "10", "bus-option-three");
+  const busOptionThree = this.createRadioButton("bus-miles", "15", "bus-option-three");
   const labelBusOptionThree = this.createLabel("11-20", "bus-option-three");
 
   busDiv.appendChild(busOptionThree)
   busDiv.appendChild(labelBusOptionThree)
 
-  const busOptionFour = this.createRadioButton("bus-miles", "15", "bus-option-four");
+  const busOptionFour = this.createRadioButton("bus-miles", "30", "bus-option-four");
   const labelBusOptionFour = this.createLabel("20+", "bus-option-four");
 
   busDiv.appendChild(busOptionFour)
@@ -159,7 +159,7 @@ CreateTravelForm.prototype.createNonFootprintQuestion = function () {
   bikeDiv.appendChild(bikeOptionOne)
   bikeDiv.appendChild(labelBikeOptionOne)
 
-  const bikeOptionTwo = this.createRadioButton("bike-miles", "0", "bike-option-two");
+  const bikeOptionTwo = this.createRadioButton("bike-miles", "5", "bike-option-two");
   const labelBikeOptionTwo = this.createLabel("No", "bike-option-two");
 
   bikeDiv.appendChild(bikeOptionTwo)
@@ -203,17 +203,15 @@ CreateTravelForm.prototype.createSubmitButton = function () {
       const form = event.target;
       const answerArray = this.getValues();
       PubSub.publish("TravelModel:send-values-array", answerArray);
-      // form.reset();
+      form.reset();
     });
   };
 
   CreateTravelForm.prototype.getValues = function () {
-    const answerArray = [];
-    const carAnswer = document.querySelector('input[name="car-miles"]:checked').value;
-    const busAnswer = document.querySelector('input[name="bus-miles"]:checked').value;
-    const bikeAnswer = document.querySelector('input[name="bike-miles"]:checked').value;
-
-    answerArray.push(carAnswer, busAnswer, bikeAnswer);
+    let carAnswer = document.querySelector('input[name="car-miles"]:checked').value;
+    let busAnswer = document.querySelector('input[name="bus-miles"]:checked').value;
+    let bikeAnswer = document.querySelector('input[name="bike-miles"]:checked').value;
+    const answerArray = [carAnswer, busAnswer, bikeAnswer];
     return answerArray
   };
 
