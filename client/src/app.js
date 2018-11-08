@@ -43,4 +43,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const total = new TotalCalculator();
   total.bindEvents();
+  // newFormTravel.onLoad();
 });

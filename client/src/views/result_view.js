@@ -147,9 +147,7 @@ Highcharts.setOptions(Highcharts.theme);
             sliced: true,
             selected: true
         },
-        {  name: 'Travel',
-            y: this.travel
-        },
+    
         {  name: 'Travel',
             y: this.travel
         }, {
