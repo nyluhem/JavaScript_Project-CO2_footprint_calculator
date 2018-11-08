@@ -21,13 +21,12 @@ FoodView.prototype.createForm = function () {
   header.textContent = "ENTER FOOD DETAILS:"
   foodForm.appendChild(header);
 
-  // Diet
  const diet = this.createLabel("Diet");
  foodForm.appendChild(diet);
  const dietQuestion = this.createQuestion("diet")
  foodForm.appendChild(dietQuestion);
 
- //vegetarian button
+
  const vegetarian = this.createCheckbutton("vegetarian", "diet", "10")
  const vegetarianLabel = this.createLableforButton("Vegetarian")
  foodForm.appendChild(vegetarian);
@@ -38,7 +37,7 @@ const meatLabel = this.createLableforButton("Non Vegetarian")
 foodForm.appendChild(meat);
 foodForm.appendChild(meatLabel);
 
-//PREPARATION
+
 const preparation = this.createLabel("Preparation")
 foodForm.appendChild(preparation);
 const preparationQuestion = this.preparationQuestion()

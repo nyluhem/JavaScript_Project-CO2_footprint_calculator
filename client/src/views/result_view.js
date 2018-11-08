@@ -125,7 +125,7 @@ Highcharts.setOptions(Highcharts.theme);
         text: `Your CO2 Footprint!`
     },
     tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}&</b>'
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
     },
     plotOptions: {
        pie: {
@@ -147,7 +147,7 @@ Highcharts.setOptions(Highcharts.theme);
             sliced: true,
             selected: true
         },
-    
+
         {  name: 'Travel',
             y: this.travel
         }, {

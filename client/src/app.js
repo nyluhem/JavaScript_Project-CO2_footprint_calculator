@@ -5,7 +5,6 @@ const LifestyleModel = require('./models/lifestyle.js');
 const FoodView = require('./views/form_views/food/food_form_view.js');
 const FoodModel = require('./models/food.js');
 const ResultView = require('./views/result_view.js');
-// const FoodFinalView = require('./views/form_views/food/food_final_view.js');
 const TotalCalculator = require('./models/total.js');
 const PubSub = require('./helpers/pub_sub.js');
 const TotalCalculatorPublish = require('./views/form_views/final_view.js')
