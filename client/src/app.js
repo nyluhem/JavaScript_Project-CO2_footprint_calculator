@@ -1,4 +1,4 @@
-const TravelForm = require("./views/form_views/create_form.js")
+const TravelForm = require("./views/form_views/travel_form.js")
 const TravelCalculator = require("./models/travel.js")
 const LifestyleView = require('./views/form_views/lifestyle_form_view.js');
 const LifestyleModel = require('./models/lifestyle.js');
@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const travelCalculator = new TravelCalculator();
   travelCalculator.bindEvents();
 
-
   const container = document.querySelector('#forms-window');
   const lifestyleForm = new LifestyleView(container);
   lifestyleForm.bindEvents();
@@ -43,5 +42,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const total = new TotalCalculator();
   total.bindEvents();
-  // newFormTravel.onLoad();
 });

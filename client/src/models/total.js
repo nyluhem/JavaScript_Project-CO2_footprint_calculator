@@ -27,15 +27,15 @@ TotalCalculator.prototype.bindEvents = function () {
     this.values.lifestyle = parseInt(lifestyleData)
   });
 
-  const button = document.querySelector('#clicky-button');
-
-    button.addEventListener('click', () => {
-    const result = this.calculateTotal();
-    // this.chart()
-    console.log(result);
-    PubSub.publish("PublishView:final-result", result);
-    // need to subscribe to this in results view
-  });
+  // const button = document.querySelector('#clicky-button');
+  //
+  //   button.addEventListener('click', () => {
+  //   const result = this.calculateTotal();
+  //   // this.chart()
+  //   console.log(result);
+  //   PubSub.publish("PublishView:final-result", result);
+  //   // need to subscribe to this in results view
+  // });
 
 };
 

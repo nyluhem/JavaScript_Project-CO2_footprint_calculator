@@ -1,5 +1,5 @@
 const PubSub = require('../helpers/pub_sub.js');
-const LifesstyleView = require ('../views/lifestyle_form_view');
+const LifestyleView = require ('../views/lifestyle_form_view');
 
 const GridView = function (container) {
   this.container = container;

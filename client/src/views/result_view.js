@@ -12,7 +12,6 @@ const ResultView = function (container) {
   this.all = null;
 };
 
-
 ResultView.prototype.bindEvents = function () {
  const menuItem = document.querySelector("#result-menu-item");
  menuItem.addEventListener("click", (event) => {
@@ -20,7 +19,6 @@ const detail = event.target.detail
  PubSub.publish('PublishView:final-result', detail)
  });
 };
-
 
 ResultView.prototype.findValues = function () {
 
