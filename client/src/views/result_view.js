@@ -1,6 +1,6 @@
 const PubSub = require('../helpers/pub_sub.js');
-const Highcharts = require('highcharts');
-require('highcharts/modules/exporting')(Highcharts);
+// const Highcharts = require('highcharts');
+// require('highcharts/modules/exporting')(Highcharts);
 const TotalCalculator = require("../models/total.js");
 const Recommend = require('../models/recommend.js');
 

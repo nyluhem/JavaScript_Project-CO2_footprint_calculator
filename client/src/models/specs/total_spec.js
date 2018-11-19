@@ -8,10 +8,8 @@ describe("Total Calculator", function(){
       totalCalculator = new Total;
     });
 
-
   it("can calculate the three different inputs", function() {
       totalCalculator.values = {food: 5, travel: 5, lifestyle: 5};
-      assert.deepStrictEqual(totalCalculator.calculateTotal, 15);
+      assert.deepStrictEqual(totalCalculator.calculateTotal(), 15);
   })
-
 });
