@@ -27,6 +27,8 @@ FoodView.prototype.createForm = function () {
  foodForm.appendChild(dietQuestion);
 
 
+
+
  const vegetarian = this.createCheckbutton("vegetarian", "diet", "10")
  const vegetarianLabel = this.createLableforButton("Vegetarian")
  foodForm.appendChild(vegetarian);
@@ -139,6 +141,7 @@ FoodView.prototype.createSubmitButton = function () {
   const button = document.createElement("input")
   button.type = "submit"
   button.value = "SUBMIT"
+  button.classList.add("food-button");
   return button
 };
 

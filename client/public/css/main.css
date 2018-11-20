@@ -46,7 +46,7 @@ h5 {
   color: white;
   background-color: rgba(188, 231, 132, 0.8);
   padding: 20px;
-  
+
 
 }
 
@@ -138,6 +138,11 @@ input[type=submit] {
   font-weight: bold;
   font-size: 14px;
 
+}
+
+.food-button {
+  display: block;
+  /* position: absolute; */
 }
 
 
