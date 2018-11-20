@@ -1,16 +1,24 @@
 
 body {
   font-family: 'Raleway', sans-serif;
+  background-image: url("tree_background.png");
+  background-size: cover;
 }
-
 
 h1 {
   padding: 60px;
   margin: 0;
   color: white;
-  font-size: 45px;
+  font-size: 55px;
   text-align: left;
-  background-color: #196B7F;
+}
+
+img {
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  top: 60px;
+  left: 350px;
 }
 
 h3 {
@@ -32,10 +40,14 @@ h5 {
 }
 
 #random-quote {
-  font-size: 30px;
+  font-size: 35px;
   text-align: center;
-  color: #196B7F;
-  padding: 40px;
+
+  color: white;
+  background-color: rgba(188, 231, 132, 0.8);
+  padding: 20px;
+  
+
 }
 
 p {
@@ -73,39 +85,39 @@ ul {
 }
 
 #travel-menu-item {
-  background-color: #1C708E;
+  background-color: #5DD39E;
   border-radius: 8px 8px 0px 0px;
   padding-bottom: 2px;
 }
 
 #travel-form {
-  background-color: #1C708E;
+  background-color: #5DD39E;
   padding: 20px;
   border-radius: 8px 8px 8px 8px;
   height: 350px;
 }
 
 #food-menu-item {
-  background-color: #4797AD;
+  background-color: #E07A5F;
   border-radius: 8px 8px 0px 0px;
   padding-bottom: 2px;
 }
 
 #food-form {
-  background-color: #4797AD;
+  background-color: #E07A5F;
   padding: 20px;
   border-radius: 8px 8px 8px 8px;
   height: 350px;
 }
 
 #lifestyle-menu-item {
-  background-color: #196B7F;
+  background-color: #BCE784;
   border-radius: 8px 8px 0px 0px;
   padding-bottom: 2px;
 }
 
 #lifestyle-form {
-  background-color: #196B7F;
+  background-color: #BCE784;
   padding: 20px;
   border-radius: 8px 8px 8px 8px;
   height: 350px;
@@ -126,9 +138,9 @@ input[type=submit] {
   font-size: 14px;
 }
 
+
 footer {
   text-align: left;
-  background-color: #196B7F;
   color: white;
   padding: 6px;
 }
