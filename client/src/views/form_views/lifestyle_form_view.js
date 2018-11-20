@@ -12,10 +12,6 @@ LifestyleView.prototype.bindEvents = function () {
 };
 
 
-
-
-
-
 LifestyleView.prototype.createForm = function () {
   event.preventDefault();
   this.container.innerHTML = '';
@@ -211,7 +207,7 @@ LifestyleView.prototype.createButton = function () {
   const button = document.createElement('input');
   button.type = 'submit';
   button.value = 'SUBMIT';
-  button.id = 'submit-button';
+  button.id = 'submit';
   return button;
 };
 

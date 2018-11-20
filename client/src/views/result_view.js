@@ -1,15 +1,15 @@
 const PubSub = require('../helpers/pub_sub.js');
-// const Highcharts = require('highcharts');
-// require('highcharts/modules/exporting')(Highcharts);
+const Highcharts = require('highcharts');
+require('highcharts/modules/exporting')(Highcharts);
 const TotalCalculator = require("../models/total.js");
 const Recommend = require('../models/recommend.js');
 
 const ResultView = function (container) {
   this.container = container;
-  this.travel = null;
-  this.food = null;
-  this.lifestyle = null;
-  this.all = null;
+  this.travel = 50;
+  this.food = 75;
+  this.lifestyle = 25;
+  this.all = 0;
 };
 
 ResultView.prototype.bindEvents = function () {
@@ -120,7 +120,7 @@ Highcharts.setOptions(Highcharts.theme);
 
     },
     title: {
-        text: `Your CO2 Footprint!`
+        text: `${this.getTitle()}`,
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -158,5 +158,14 @@ Highcharts.setOptions(Highcharts.theme);
 this.container.innerHTML = "";
 const result = this.container.appendChild(myChart)
 }
+
+ResultView.prototype.getTitle = function () {
+  if (this.travel == 50 && this.food == 75 && this.lifestyle == 25){
+    return `Average Consumption`;
+  } else {
+    return `Your CO2 Consumption!`;
+  }
+  };
+
 
 module.exports = ResultView;
